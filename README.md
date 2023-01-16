@@ -1,6 +1,6 @@
-# TOSCA Definitions Example Applications Repository [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# <span style="font-variant:small-caps;">Lauffuer</span> Example Applications [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-> Example applications modeled in TOSCA to demonstrate the Lauffeuer-Method in the  [Lauffeuer-Framework](http://github.com/lharzenetter/lauffeuer-framework).
+> Example applications modeled in TOSCA to demonstrate the Lauffeuer-Method in the  [<span style="font-variant:small-caps;">Lauffeuer</span>-Framework](http://github.com/lharzenetter/lauffeuer-framework).
 
 ## Usage
 
