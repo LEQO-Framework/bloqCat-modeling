@@ -15,9 +15,14 @@
     "branch": "main"
   },
   {
+    "name": "Example Applications",
+    "url": "https://github.com/OpenTOSCA/tosca-definitions-example-applications",
+    "branch": "main"
+  },
+  {
     "name": "Pattern Atlas",
-    "url": "https://patterns.platform.planqk.de/patternatlas",
-    "ui": "https://patterns.platform.planqk.de",
+    "url": "http://192.168.178.53:1977/patternatlas/",
+    "ui": "http://192.168.178.53:1978",
     "patternAtlas": true
   }
 ]
