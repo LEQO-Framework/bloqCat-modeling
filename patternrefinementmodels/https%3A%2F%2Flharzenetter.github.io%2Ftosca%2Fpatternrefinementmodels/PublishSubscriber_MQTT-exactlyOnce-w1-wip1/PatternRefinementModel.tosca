@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-PublishSubscriber_MQTT-exactlyOnce-w1-wip1">
+    <PatternRefinementModel isPdrm="no" name="PublishSubscriber_MQTT-exactlyOnce-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:PublisherProxy" id="d_PublisherProxy_0" winery:x="508" winery:y="148">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="d_SubscriberProxy_0" winery:x="1197" winery:y="152">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:eip="https://patternpedia.org/patternLanguages/eip" name="Message-Channel" minInstances="1" maxInstances="1" type="eip:Message-Channel" id="d_Message-Channel_0" winery:x="930" winery:y="149">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies>
+                    <Policy xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="exaclty_once" policyType="cloudComputingPatterns:Exactly-once-Delivery"/>
+                </Policies>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Messaging" type="relationsLukas:Messaging" id="d_con_Messaging_0">
+                <Properties/>
+                <SourceElement ref="d_PublisherProxy_0"/>
+                <TargetElement ref="d_Message-Channel_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Messaging" type="relationsLukas:Messaging" id="d_con_Messaging_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="d_SubscriberProxy_0"/>
+                <TargetElement ref="d_Message-Channel_0"/>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings>
+            <RelationMapping xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" relationType="relationsLukas:HTTP" direction="ingoing" detectorNode="d_PublisherProxy_0" refinementNode="rs_PublisherProxy_0" id="relMap0"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="outgoing" detectorNode="d_PublisherProxy_0" refinementNode="rs_PublisherProxy_0" id="relMap1"/>
+            <RelationMapping xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" relationType="relationsLukas:HTTP" direction="outgoing" detectorNode="d_SubscriberProxy_0" refinementNode="rs_SubscriberProxy_0" id="relMap2"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="outgoing" detectorNode="d_SubscriberProxy_0" refinementNode="rs_SubscriberProxy_0" id="relMap3"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="outgoing" detectorNode="d_Message-Channel_0" refinementNode="rs_Topic_0" id="relMap4"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:DependsOn" direction="outgoing" detectorNode="d_PublisherProxy_0" refinementNode="rs_PublisherProxy_0" id="relMap5"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:DependsOn" direction="outgoing" detectorNode="d_SubscriberProxy_0" refinementNode="rs_SubscriberProxy_0" id="relMap6"/>
+        </RelationMappings>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:PublisherProxy" id="rs_PublisherProxy_0" winery:x="490" winery:y="172">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/driverinjection/artifacttypes" xmlns:otateIgeneral="http://opentosca.org/driverinjection/artifacttemplates" name="driver" artifactType="otatyIgeneral:MQTT-Driver_Python3.8-w1" artifactRef="otateIgeneral:MQTT-Driver-DA_Python3.8-w1"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="rs_SubscriberProxy_0" winery:x="1198" winery:y="172">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/driverinjection/artifacttypes" xmlns:otateIgeneral="http://opentosca.org/driverinjection/artifacttemplates" name="driver" artifactType="otatyIgeneral:MQTT-Driver_Java11-w1" artifactRef="otateIgeneral:MQTT-Driver-DA_Java11-w1"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral:MQTT-Topic" id="rs_Topic_0" winery:x="851" winery:y="172">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <TopicName/>
+                        <QoS>2</QoS>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="MQTT" type="relationsLukas:MQTT" id="rs_con_MQTT_0">
+                <SourceElement ref="rs_PublisherProxy_0"/>
+                <TargetElement ref="rs_Topic_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="MQTT" type="relationsLukas:MQTT" id="rs_con_MQTT_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_SubscriberProxy_0"/>
+                <TargetElement ref="rs_Topic_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings/>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings>
+            <BehaviorPatternMapping behaviorPattern="exaclty_once" detectorNode="d_Message-Channel_0" refinementNode="rs_Topic_0" id="behaviorPatternMap0">
+                <Property key="QoS" value="2"/>
+            </BehaviorPatternMapping>
+        </BehaviorPatternMappings>
+    </PatternRefinementModel>
+</Definitions>
