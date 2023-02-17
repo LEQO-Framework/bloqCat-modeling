@@ -77,7 +77,7 @@
                         <VMUserPassword>N/A</VMUserPassword>
                         <VMPrivateKey>get_input: vm_private_key</VMPrivateKey>
                         <VMPublicKey>N/A</VMPublicKey>
-                        <VMKeyPairName>get_input: vm_key_pair</VMKeyPairName>
+                        <VMKeyPairName>get_input: vm_key_pair_name</VMKeyPairName>
                     </ex:Properties>
                 </Properties>
                 <Capabilities/>
