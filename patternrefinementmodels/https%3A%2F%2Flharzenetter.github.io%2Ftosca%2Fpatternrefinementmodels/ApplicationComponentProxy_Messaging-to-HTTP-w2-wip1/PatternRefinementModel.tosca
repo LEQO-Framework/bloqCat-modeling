@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-ApplicationComponentProxy_Messaging-to-HTTP-w2-wip1">
+    <PatternRefinementModel isPdrm="no" name="ApplicationComponentProxy_Messaging-to-HTTP-w2-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Application-Component-Proxy" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Application-Component-Proxy" id="d_Application-Component-Proxy_0" winery:x="478" winery:y="145">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral1:Compute" id="d_Compute_0" winery:x="406" winery:y="369">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <SourceElement ref="d_Application-Component-Proxy_0"/>
+                <TargetElement ref="d_Compute_0"/>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:ConnectsTo" direction="outgoing" detectorNode="d_Application-Component-Proxy_0" refinementNode="rs_SubscriberProxy_0" id="relMap0"/>
+            <RelationMapping xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" relationType="relationsLukas:Messaging" direction="outgoing" detectorNode="d_Application-Component-Proxy_0" refinementNode="rs_SubscriberProxy_0" id="relMap1"/>
+        </RelationMappings>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="rs_SubscriberProxy_0" winery:x="583" winery:y="269">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Java" minInstances="1" maxInstances="1" type="otntyIgeneral:Java_11-w1" id="rs_Java_11-w1_0" winery:x="780" winery:y="437">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <component_version/>
+                        <admin_credential/>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral1:Compute" id="rs_Compute_0" winery:x="639" winery:y="597">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="DependsOn" type="ToscaBaseTypes:DependsOn" id="rs_con_DependsOn_0">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_SubscriberProxy_0"/>
+                <TargetElement ref="rs_Java_11-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_SubscriberProxy_0"/>
+                <TargetElement ref="rs_Compute_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_Java_11-w1_0"/>
+                <TargetElement ref="rs_Compute_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings>
+            <StayMapping detectorNode="d_Compute_0" refinementNode="rs_Compute_0" id="stayMap0"/>
+        </StayMappings>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings/>
+    </PatternRefinementModel>
+</Definitions>

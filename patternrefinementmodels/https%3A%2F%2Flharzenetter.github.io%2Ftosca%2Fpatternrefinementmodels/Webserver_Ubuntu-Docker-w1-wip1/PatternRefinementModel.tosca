@@ -14,14 +14,31 @@
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
                 <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="WebApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:WebApplication" id="d_WebApplication_0" winery:x="374" winery:y="15">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <context_root/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <Properties/>
                 <SourceElement ref="d_Execution-Environment_0"/>
                 <TargetElement ref="d_Hypervisor_0"/>
             </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="d_WebApplication_0"/>
+                <TargetElement ref="d_Execution-Environment_0"/>
+            </RelationshipTemplate>
         </Detector>
         <RelationMappings>
-            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:ntyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" validSourceOrTarget="ntyIgeneral:WebApplication" detectorNode="d_Execution-Environment_0" refinementNode="rs_NGINX_latest-w1_0" id="relMap1"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" validSourceOrTarget="ntyIgeneral1:WebApplication" detectorNode="d_Execution-Environment_0" refinementNode="rs_NGINX_latest-w1_0" id="relMap1"/>
             <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Execution-Environment_0" refinementNode="rs_UbuntuContainer_20.04-w1_0" id="relMap2"/>
             <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Hypervisor_0" refinementNode="rs_DockerEngine_w1_0" id="relMap3"/>
         </RelationMappings>
@@ -61,6 +78,15 @@
                     </ex:Properties>
                 </Properties>
                 <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="WebApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:WebApplication" id="rs_WebApplication_0" winery:x="480" winery:y="79">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <context_root/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
                 <Properties>
@@ -76,9 +102,18 @@
                 <SourceElement ref="rs_UbuntuContainer_20.04-w1_0"/>
                 <TargetElement ref="rs_DockerEngine_w1_0"/>
             </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_WebApplication_0"/>
+                <TargetElement ref="rs_NGINX_latest-w1_0"/>
+            </RelationshipTemplate>
         </RefinementStructure>
         <AttributeMappings/>
-        <StayMappings/>
+        <StayMappings>
+            <StayMapping detectorNode="d_WebApplication_0" refinementNode="rs_WebApplication_0" id="stayMap0"/>
+        </StayMappings>
         <DeploymentArtifactMappings/>
         <PermutationOptions/>
         <BehaviorPatternMappings/>
