@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-MessageChannel_Docker-Mosquitto-w1-wip1">
+    <PatternRefinementModel isPdrm="no" name="MessageChannel_Docker-Mosquitto-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="MQTT-Topic" minInstances="1" maxInstances="1" type="otntyIgeneral:MQTT-Topic" id="d_MQTT-Topic_0" winery:x="517" winery:y="147">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <TopicName/>
+                        <QoS/>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Message-oriented-Middleware" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Message-oriented-Middleware" id="d_Message-oriented-Middleware_0" winery:x="585" winery:y="366">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Hypervisor" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Hypervisor" id="d_Hypervisor_0" winery:x="576" winery:y="549">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <Properties/>
+                <SourceElement ref="d_Message-oriented-Middleware_0"/>
+                <TargetElement ref="d_Hypervisor_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="d_MQTT-Topic_0"/>
+                <TargetElement ref="d_Message-oriented-Middleware_0"/>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Hypervisor_0" refinementNode="rs_DockerEngine_w1_0" id="relMap0"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Message-oriented-Middleware_0" refinementNode="rs_Mosquitto_2.0-w2-wip1_0" id="relMap1"/>
+        </RelationMappings>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="MQTT-Topic" minInstances="1" maxInstances="1" type="otntyIgeneral:MQTT-Topic" id="rs_MQTT-Topic_0" winery:x="424" winery:y="77">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <TopicName/>
+                        <QoS/>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral:Mosquitto_2.0-w2-wip1" id="rs_Mosquitto_2.0-w2-wip1_0" winery:x="426" winery:y="234">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <component_version/>
+                        <admin_credential/>
+                        <Port>get_input: mosquitto_port</Port>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_20.04-w1" id="rs_UbuntuContainer_20.04-w1_0" winery:x="427" winery:y="418">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <Port>get_input: mosquitto_port</Port>
+                        <ContainerPort>get_input: mosquitto_port</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerEngine_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerEngine_w1" id="rs_DockerEngine_w1_0" winery:x="390" winery:y="621">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <DockerEngineURL>get_input: docker_engine_url</DockerEngineURL>
+                        <DockerEngineCertificate/>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
+                <SourceElement ref="rs_MQTT-Topic_0"/>
+                <TargetElement ref="rs_Mosquitto_2.0-w2-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_Mosquitto_2.0-w2-wip1_0"/>
+                <TargetElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <TargetElement ref="rs_DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings>
+            <StayMapping detectorNode="d_MQTT-Topic_0" refinementNode="rs_MQTT-Topic_0" id="stayMap0"/>
+        </StayMappings>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings/>
+    </PatternRefinementModel>
+</Definitions>

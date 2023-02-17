@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-RelationalDatabase_Docker-MySQL-8-w3-wip1">
+    <PatternRefinementModel isPdrm="no" name="RelationalDatabase_Docker-MySQL-8-w3-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Relational-Database" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Relational-Database" id="d_Relational-Database_0" winery:x="513" winery:y="126">
+                <Properties>
+                    <cloudComputingPatterns:Relational-Database xmlns="https://patternpedia.org/patternLanguages/cloudComputingPatterns">
+                        <database_name/>
+                    </cloudComputingPatterns:Relational-Database>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="ContainerApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:ContainerApplication" id="d_ContainerApplication_0" winery:x="434" winery:y="305">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <SourceElement ref="d_Relational-Database_0"/>
+                <TargetElement ref="d_ContainerApplication_0"/>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings>
+            <RelationMapping xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" relationType="relationsLukas:SQL" direction="ingoing" detectorNode="d_Relational-Database_0" refinementNode="rs_MySQL-DB_w1_0" id="relMap2"/>
+        </RelationMappings>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="MySQL-DB_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:MySQL-DB_w1" id="rs_MySQL-DB_w1_0" winery:x="519" winery:y="142">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <name/>
+                        <port/>
+                        <user/>
+                        <password/>
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="MySQL-DBMS" minInstances="1" maxInstances="1" type="otntyIgeneral:MySQL-DBMS_8.0-w1" id="rs_MySQL-DBMS_8.0-w1_0" winery:x="513" winery:y="291">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <DBMSUser>root</DBMSUser>
+                        <DBMSPassword>root</DBMSPassword>
+                        <DBMSPort>get_input: mysql_port</DBMSPort>
+                        <root_password/>
+                        <port/>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="ContainerApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:ContainerApplication" id="rs_ContainerApplication_0" winery:x="462" winery:y="528">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
+                <Properties/>
+                <SourceElement ref="rs_MySQL-DB_w1_0"/>
+                <TargetElement ref="rs_MySQL-DBMS_8.0-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_MySQL-DBMS_8.0-w1_0"/>
+                <TargetElement ref="rs_ContainerApplication_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings>
+            <AttributeMapping type="selective" detectorProperty="database_name" refinementProperty="DBName" detectorNode="d_Relational-Database_0" refinementNode="rs_MySQL-DB_w1_0" id="propMap0"/>
+        </AttributeMappings>
+        <StayMappings>
+            <StayMapping detectorNode="d_ContainerApplication_0" refinementNode="rs_ContainerApplication_0" id="stayMap0"/>
+        </StayMappings>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings/>
+    </PatternRefinementModel>
+</Definitions>

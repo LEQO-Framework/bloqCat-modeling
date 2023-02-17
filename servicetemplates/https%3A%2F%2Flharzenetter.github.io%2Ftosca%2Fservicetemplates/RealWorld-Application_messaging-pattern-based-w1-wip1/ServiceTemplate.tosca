@@ -25,7 +25,13 @@
                     <Policy xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="worker" policyType="cloudComputingPatterns:Processing-Component"/>
                 </Policies>
             </NodeTemplate>
-            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Relational-Database" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Relational-Database" id="Relational-Database_0" winery:x="1495" winery:y="97"/>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Relational-Database" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Relational-Database" id="Relational-Database_0" winery:x="1495" winery:y="97">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <database_name>realWorld</database_name>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Execution-Environment" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Execution-Environment" id="Execution-Environment_0" winery:x="1487" winery:y="303"/>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Execution-Environment" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Execution-Environment" id="Execution-Environment_1" winery:x="1133" winery:y="303"/>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Message-oriented-Middleware" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Message-oriented-Middleware" id="Message-oriented-Middleware_0" winery:x="777" winery:y="303"/>
@@ -42,15 +48,6 @@
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2">
                 <SourceElement ref="Relational-Database_0"/>
                 <TargetElement ref="Execution-Environment_0"/>
-            </RelationshipTemplate>
-            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="MySQL" type="relationsLukas:MySQL" id="con_MySQL_0">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
-                        <ChannelType>mysql</ChannelType>
-                    </ex:Properties>
-                </Properties>
-                <SourceElement ref="RealWorld-Application-Backend_Java11-Spring-w1_0"/>
-                <TargetElement ref="Relational-Database_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
                 <SourceElement ref="RealWorld-Application-Backend_Java11-Spring-w1_0"/>
@@ -113,6 +110,15 @@
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Messaging" type="relationsLukas:Messaging" id="con_Messaging_1">
                 <SourceElement ref="Application-Component-Proxy_1"/>
                 <TargetElement ref="Message-Channel_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="SQL" type="relationsLukas:SQL" id="con_SQL_0">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <ChannelType/>
+                    </ex:Properties>
+                </Properties>
+                <SourceElement ref="RealWorld-Application-Backend_Java11-Spring-w1_0"/>
+                <TargetElement ref="Relational-Database_0"/>
             </RelationshipTemplate>
         </TopologyTemplate>
     </ServiceTemplate>
