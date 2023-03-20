@@ -26,13 +26,7 @@
         </RelationMappings>
         <PermutationMappings/>
         <RefinementStructure>
-            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="rs_SubscriberProxy_0" winery:x="583" winery:y="269">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
-                <Capabilities/>
-                <Policies/>
-            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="rs_SubscriberProxy_0" winery:x="583" winery:y="269" />
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Java" minInstances="1" maxInstances="1" type="otntyIgeneral:Java_11-w1" id="rs_Java_11-w1_0" winery:x="729" winery:y="402">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">

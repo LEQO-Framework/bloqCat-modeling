@@ -57,8 +57,8 @@
                         <user/>
                         <password/>
                         <DBName/>
-                        <DBUser/>
-                        <DBPassword/>
+                        <DBUser>get_input: db_user</DBUser>
+                        <DBPassword>get_input: db_password</DBPassword>
                     </ex:Properties>
                 </Properties>
                 <Capabilities/>

@@ -4,25 +4,13 @@
         <Detector>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:PublisherProxy" id="d_PublisherProxy_0" winery:x="508" winery:y="148">
                 <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <Port>*</Port>
+                    </ex:Properties>
                 </Properties>
-                <Capabilities/>
-                <Policies/>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="d_SubscriberProxy_0" winery:x="1197" winery:y="152">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
-                <Capabilities/>
-                <Policies/>
-            </NodeTemplate>
-            <NodeTemplate xmlns:eip="https://patternpedia.org/patternLanguages/eip" name="Message-Channel" minInstances="1" maxInstances="1" type="eip:Message-Channel" id="d_Message-Channel_0" winery:x="930" winery:y="150">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
-                <Capabilities/>
-                <Policies/>
-            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="d_SubscriberProxy_0" winery:x="1197" winery:y="152" />
+            <NodeTemplate xmlns:eip="https://patternpedia.org/patternLanguages/eip" name="Message-Channel" minInstances="1" maxInstances="1" type="eip:Message-Channel" id="d_Message-Channel_0" winery:x="930" winery:y="150" />
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Messaging" type="relationsLukas:Messaging" id="d_con_Messaging_0">
                 <Properties/>
                 <SourceElement ref="d_PublisherProxy_0"/>
@@ -49,20 +37,15 @@
         <RefinementStructure>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:PublisherProxy" id="rs_PublisherProxy_0" winery:x="490" winery:y="172">
                 <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <Port>get_input: publisher_port</Port>
+                    </ex:Properties>
                 </Properties>
-                <Capabilities/>
-                <Policies/>
                 <DeploymentArtifacts>
                     <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/driverinjection/artifacttypes" xmlns:otateIgeneral="http://opentosca.org/driverinjection/artifacttemplates" name="driver" artifactType="otatyIgeneral:AMQP-Driver_Python3.8-w1" artifactRef="otateIgeneral:AMQP-Driver-DA_Python3.8-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="otntyIgeneral:SubscriberProxy" id="rs_SubscriberProxy_0" winery:x="1198" winery:y="172">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
-                <Capabilities/>
-                <Policies/>
                 <DeploymentArtifacts>
                     <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/driverinjection/artifacttypes" xmlns:otateIgeneral="http://opentosca.org/driverinjection/artifacttemplates" name="driver" artifactType="otatyIgeneral:AMQP-Driver_Java11-w1" artifactRef="otateIgeneral:AMQP-Driver-DA_Java11-w1"/>
                 </DeploymentArtifacts>
