@@ -57,8 +57,8 @@
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_20.04-w1" id="rs_UbuntuContainer_20.04-w1_0" winery:x="476" winery:y="432">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
-                        <Port>get_input: webserver_prot</Port>
-                        <ContainerPort>get_input: webserver_prot</ContainerPort>
+                        <Port>get_input: webserver_port</Port>
+                        <ContainerPort>get_input: webserver_port</ContainerPort>
                         <ContainerID/>
                         <ContainerIP/>
                         <ImageID>ubuntu:20.04</ImageID>
