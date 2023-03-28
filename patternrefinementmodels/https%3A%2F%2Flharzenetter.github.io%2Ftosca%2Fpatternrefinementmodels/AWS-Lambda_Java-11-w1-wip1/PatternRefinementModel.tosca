@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-AWS-Lambda_Java-11-w1-wip1">
+    <PatternRefinementModel isPdrm="no" name="AWS-Lambda_Java-11-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="SpringWebApp_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:SpringWebApp_w1" id="d_SpringWebApp_w1_0" winery:x="523" winery:y="136">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <component_version/>
+                        <admin_credential/>
+                        <AppName/>
+                        <Port/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
+                <Policies>
+                    <Policy xmlns:eip="https://patternpedia.org/patternLanguages/eip" name="Event-Driven" policyType="eip:Event-Driven-Consumer"/>
+                    <Policy xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Stateless" policyType="cloudComputingPatterns:Stateless-Component"/>
+                    <Policy xmlns:componentHostingPatterns="https://patternpedia.org/patternLanguages/componentHostingPatterns" name="Scaling" policyType="componentHostingPatterns:Provider-managed-Scaling-Configuration"/>
+                </Policies>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Public-Cloud" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Public-Cloud" id="d_Public-Cloud_0" winery:x="594" winery:y="551">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:componentHostingPatterns="https://patternpedia.org/patternLanguages/componentHostingPatterns" name="Serverless-Hosting" minInstances="1" maxInstances="1" type="componentHostingPatterns:Serverless-Hosting" id="d_Serverless-Hosting_0" winery:x="604" winery:y="342">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <SourceElement ref="d_SpringWebApp_w1_0"/>
+                <TargetElement ref="d_Serverless-Hosting_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="d_Serverless-Hosting_0"/>
+                <TargetElement ref="d_Public-Cloud_0"/>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Public-Cloud_0" refinementNode="rs_AWS_w1-wip1_0" id="relMap0"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Serverless-Hosting_0" refinementNode="rs_Lambda_w1-wip1_0" id="relMap1"/>
+        </RelationMappings>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="SpringWebApp_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:SpringWebApp_w1" id="rs_SpringWebApp_w1_0" winery:x="476" winery:y="88">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <component_version/>
+                        <admin_credential/>
+                        <AppName/>
+                        <Port/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="Lambda-Envirionment" minInstances="1" maxInstances="1" type="ntyIgeneral:Lambda-Envirionment_Java-11-w1-wip1" id="rs_Lambda-Envirionment_Java-11-w1-wip1_0" winery:x="493" winery:y="320">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <Trigger>onSQSmessage</Trigger>
+                        <Permissions>SQS-Read</Permissions>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="Lambda_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:Lambda_w1-wip1" id="rs_Lambda_w1-wip1_0" winery:x="497" winery:y="513">
+                <Properties>
+                    <ntyIgeneral:Lambda_w1-wip1 xmlns="https://lharzenetter.github.io/tosca/nodetypes">
+                        <Region/>
+                    </ntyIgeneral:Lambda_w1-wip1>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="AWS_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:AWS_w1-wip1" id="rs_AWS_w1-wip1_0" winery:x="492" winery:y="657">
+                <Properties>
+                    <ntyIgeneral:AWS_w1-wip1 xmlns="https://lharzenetter.github.io/tosca/nodetypes">
+                        <Account/>
+                    </ntyIgeneral:AWS_w1-wip1>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
+                <SourceElement ref="rs_SpringWebApp_w1_0"/>
+                <TargetElement ref="rs_Lambda-Envirionment_Java-11-w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_Lambda-Envirionment_Java-11-w1-wip1_0"/>
+                <TargetElement ref="rs_Lambda_w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_Lambda_w1-wip1_0"/>
+                <TargetElement ref="rs_AWS_w1-wip1_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings>
+            <StayMapping detectorNode="d_SpringWebApp_w1_0" refinementNode="rs_SpringWebApp_w1_0" id="stayMap0"/>
+        </StayMappings>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings>
+            <BehaviorPatternMapping behaviorPattern="Event-Driven" detectorNode="d_SpringWebApp_w1_0" refinementNode="rs_Lambda-Envirionment_Java-11-w1-wip1_0" id="behaviorPatternMap0">
+                <Property key="Trigger" value="onSQSmessage"/>
+            </BehaviorPatternMapping>
+            <BehaviorPatternMapping behaviorPattern="Event-Driven" detectorNode="d_SpringWebApp_w1_0" refinementNode="rs_Lambda-Envirionment_Java-11-w1-wip1_0" id="behaviorPatternMap1">
+                <Property key="Permissions" value="SQS-Read"/>
+            </BehaviorPatternMapping>
+        </BehaviorPatternMappings>
+    </PatternRefinementModel>
+</Definitions>

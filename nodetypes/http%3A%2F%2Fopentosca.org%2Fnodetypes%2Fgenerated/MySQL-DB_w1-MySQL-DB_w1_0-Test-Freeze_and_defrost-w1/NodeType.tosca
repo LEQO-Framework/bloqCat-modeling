@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/nodetypes/generated" id="otntyIgenerated-MySQL-DB_w1-MySQL-DB_w1_0-Test-Freeze_and_defrost-w1">
+    <NodeType name="MySQL-DB_w1-MySQL-DB_w1_0-Test-Freeze_and_defrost-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes/generated" winery:bordercolor="#c769c9">
+        <winery:PropertiesDefinition elementname="MySQLDBProperties" namespace="http://opentosca.org/nodetypes">
+            <winery:properties>
+                <winery:key>DBName</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>DBUser</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>DBPassword</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <Tags>
+            <Tag name="isStateful" value="true"/>
+        </Tags>
+        <DerivedFrom xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" typeRef="ntyIgeneral1:Database"/>
+        <RequirementDefinitions>
+            <RequirementDefinition xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqDBMS" requirementType="otrtyIgeneral:ReqMySQLDBMS" lowerBound="1" upperBound="1"/>
+        </RequirementDefinitions>
+        <Interfaces>
+            <Interface name="http://www.example.com/interfaces/lifecycle">
+                <Operation name="install">
+                    <InputParameters>
+                        <InputParameter name="DBName" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBUser" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBPassword" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBMSUser" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBMSPassword" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                </Operation>
+                <Operation name="configure">
+                    <InputParameters>
+                        <InputParameter name="DBName" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBUser" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBPassword" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                </Operation>
+            </Interface>
+            <Interface name="http://opentosca.org/interfaces/tests">
+                <Operation name="testConnection">
+                    <InputParameters>
+                        <InputParameter name="DBName" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBUser" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBPassword" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBMSPort" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="Result" type="xsd:string" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+            <Interface name="http://opentosca.org/interfaces/state">
+                <Operation name="freeze">
+                    <InputParameters>
+                        <InputParameter name="StoreStateServiceEndpoint" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBName" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBUser" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBPassword" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                </Operation>
+                <Operation name="defrost">
+                    <InputParameters>
+                        <InputParameter name="DBName" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBUser" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBPassword" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBMSUser" type="xsd:string" required="yes"/>
+                        <InputParameter name="DBMSPassword" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-SecureSQL_w1-wip1">
+    <PatternRefinementModel isPdrm="no" name="SecureSQL_w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Relational-Database" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Relational-Database" id="d_Relational-Database_0" winery:x="982" winery:y="251">
+                <Properties>
+                    <cloudComputingPatterns:Relational-Database xmlns="https://patternpedia.org/patternLanguages/cloudComputingPatterns">
+                        <database_name/>
+                    </cloudComputingPatterns:Relational-Database>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="SoftwareComponent" minInstances="1" maxInstances="1" type="ntyIgeneral1:SoftwareComponent" id="d_SoftwareComponent_0" winery:x="378" winery:y="242">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <component_version/>
+                        <admin_credential/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="SQL" type="relationsLukas:SQL" id="d_con_SQL_0">
+                <SourceElement ref="d_SoftwareComponent_0"/>
+                <TargetElement ref="d_Relational-Database_0"/>
+                <Policies>
+                    <Policy xmlns:behaviorPatternsLukas="https://lharzenetter.github.io/tosca/patterns/policytypes" name="Secure-Channel" policyType="behaviorPatternsLukas:Secure-Channel"/>
+                </Policies>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings/>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="WebApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:WebApplication" id="rs_WebApplication_0" winery:x="445" winery:y="204">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <context_root/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+                <DeploymentArtifacts/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Relational-Database" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Relational-Database" id="rs_Relational-Database_0" winery:x="952" winery:y="195">
+                <Properties>
+                    <cloudComputingPatterns:Relational-Database xmlns="https://patternpedia.org/patternLanguages/cloudComputingPatterns">
+                        <database_name/>
+                    </cloudComputingPatterns:Relational-Database>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+                <DeploymentArtifacts/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Secure-SQL" type="relationsLukas:Secure-SQL" id="rs_con_Secure-SQL_0">
+                <SourceElement ref="rs_WebApplication_0"/>
+                <TargetElement ref="rs_Relational-Database_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings/>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings/>
+    </PatternRefinementModel>
+</Definitions>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-SQS-Queue_w1-wip1">
+    <PatternRefinementModel isPdrm="no" name="SQS-Queue_w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Message-oriented-Middleware" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Message-oriented-Middleware" id="d_Message-oriented-Middleware_0" winery:x="449" winery:y="294">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Public-Cloud" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Public-Cloud" id="d_Public-Cloud_0" winery:x="453" winery:y="510">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:eip="https://patternpedia.org/patternLanguages/eip" name="Message-Channel" minInstances="1" maxInstances="1" type="eip:Message-Channel" id="d_Message-Channel_0" winery:x="453" winery:y="84">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <Capabilities/>
+                <Policies>
+                    <Policy xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="ExactlyOnce" policyType="cloudComputingPatterns:Exactly-once-Delivery"/>
+                    <Policy xmlns:behaviorPatternsLukas="https://lharzenetter.github.io/tosca/patterns/policytypes" name="Security" policyType="behaviorPatternsLukas:Information-Obscurity"/>
+                </Policies>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <SourceElement ref="d_Message-oriented-Middleware_0"/>
+                <TargetElement ref="d_Public-Cloud_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="d_Message-Channel_0"/>
+                <TargetElement ref="d_Message-oriented-Middleware_0"/>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings>
+            <RelationMapping xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" relationType="relationsLukas:JMS" direction="ingoing" detectorNode="d_Message-Channel_0" refinementNode="rs_SQS-Queue_w1-wip1_0" id="relMap0"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Public-Cloud_0" refinementNode="rs_AWS_w1-wip1_0" id="relMap1"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Message-oriented-Middleware_0" refinementNode="rs_SimpleQueueService_w1-wip1_0" id="relMap2"/>
+        </RelationMappings>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="AWS_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:AWS_w1-wip1" id="rs_AWS_w1-wip1_0" winery:x="651" winery:y="551">
+                <Properties>
+                    <ntyIgeneral:AWS_w1-wip1 xmlns="https://lharzenetter.github.io/tosca/nodetypes">
+                        <Account/>
+                    </ntyIgeneral:AWS_w1-wip1>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="SimpleQueueService_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:SimpleQueueService_w1-wip1" id="rs_SimpleQueueService_w1-wip1_0" winery:x="649" winery:y="361">
+                <Properties>
+                    <ntyIgeneral:SimpleQueueService_w1-wip1 xmlns="https://lharzenetter.github.io/tosca/nodetypes">
+                        <Region/>
+                    </ntyIgeneral:SimpleQueueService_w1-wip1>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="SQS-Queue_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:SQS-Queue_w1-wip1" id="rs_SQS-Queue_w1-wip1_0" winery:x="634" winery:y="146">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <Typ>FIFO</Typ>
+                        <ServersideEncryption>true</ServersideEncryption>
+                        <MasterKey>default</MasterKey>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
+                <SourceElement ref="rs_SQS-Queue_w1-wip1_0"/>
+                <TargetElement ref="rs_SimpleQueueService_w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="rs_SimpleQueueService_w1-wip1_0"/>
+                <TargetElement ref="rs_AWS_w1-wip1_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings/>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings>
+            <BehaviorPatternMapping behaviorPattern="ExactlyOnce" detectorNode="d_Message-Channel_0" refinementNode="rs_SQS-Queue_w1-wip1_0" id="behaviorPatternMap0">
+                <Property key="Typ" value="FIFO"/>
+            </BehaviorPatternMapping>
+            <BehaviorPatternMapping behaviorPattern="Security" detectorNode="d_Message-Channel_0" refinementNode="rs_SQS-Queue_w1-wip1_0" id="behaviorPatternMap1">
+                <Property key="ServersideEncryption" value="true"/>
+            </BehaviorPatternMapping>
+            <BehaviorPatternMapping behaviorPattern="Security" detectorNode="d_Message-Channel_0" refinementNode="rs_SQS-Queue_w1-wip1_0" id="behaviorPatternMap2">
+                <Property key="MasterKey" value="default"/>
+            </BehaviorPatternMapping>
+        </BehaviorPatternMappings>
+    </PatternRefinementModel>
+</Definitions>

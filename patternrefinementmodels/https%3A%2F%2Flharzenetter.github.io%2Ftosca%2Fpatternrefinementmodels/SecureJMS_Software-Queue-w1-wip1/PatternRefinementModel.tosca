@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-SecureJMS_WebApp-Queue-w1-wip1">
+    <PatternRefinementModel isPdrm="no" name="SecureJMS_WebApp-Queue-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate type="ToscaNormativeNodeTypes:SoftwareComponent" xmlns:ToscaNormativeNodeTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="SoftwareComponent" minInstances="1" maxInstances="1" id="d_WebApplication_0" winery:x="453" winery:y="157" />
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes"  name="Message-Channel" minInstances="1" maxInstances="1" type="ntyIgeneral:SQS-Queue_w1-wip1" id="d_Message-Channel_0" winery:x="891" winery:y="154">
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="JMS" type="relationsLukas:JMS" id="d_con_JMS_0">
+                <SourceElement ref="d_WebApplication_0"/>
+                <TargetElement ref="d_Message-Channel_0"/>
+                <Policies>
+                    <Policy xmlns:behaviorPatternsLukas="https://lharzenetter.github.io/tosca/patterns/policytypes" name="Security" policyType="behaviorPatternsLukas:Secure-Channel"/>
+                </Policies>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings/>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate type="ToscaNormativeNodeTypes:SoftwareComponent" xmlns:ToscaNormativeNodeTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="SoftwareComponent" minInstances="1" maxInstances="1" id="rs_WebApplication_0" winery:x="452" winery:y="155" />
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes"  name="Message-Channel" minInstances="1" maxInstances="1" type="ntyIgeneral:SQS-Queue_w1-wip1" id="rs_Message-Channel_0" winery:x="927" winery:y="151">
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Secure-JMS" type="relationsLukas:Secure-JMS" id="rs_con_Secure-JMS_0">
+                <SourceElement ref="rs_WebApplication_0"/>
+                <TargetElement ref="rs_Message-Channel_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings>
+            <StayMapping detectorNode="d_WebApplication_0" refinementNode="rs_WebApplication_0" id="stayMap0"/>
+            <StayMapping detectorNode="d_Message-Channel_0" refinementNode="rs_Message-Channel_0" id="stayMap1"/>
+        </StayMappings>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings/>
+    </PatternRefinementModel>
+</Definitions>

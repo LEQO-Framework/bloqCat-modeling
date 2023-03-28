@@ -90,6 +90,9 @@
                 </Properties>
                 <SourceElement ref="AngularWebApp_w1_0"/>
                 <TargetElement ref="Message-Channel_0"/>
+                <Policies>
+                    <Policy xmlns:behaviorPatternsLukas="https://lharzenetter.github.io/tosca/patterns/policytypes" name="Secure-Channel" policyType="behaviorPatternsLukas:Secure-Channel"/>
+                </Policies>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="JMS" type="relationsLukas:JMS" id="con_JMS_1">
                 <Properties>
@@ -100,6 +103,9 @@
                 </Properties>
                 <SourceElement ref="SpringWebApp_w1_0"/>
                 <TargetElement ref="Message-Channel_0"/>
+                <Policies>
+                    <Policy xmlns:behaviorPatternsLukas="https://lharzenetter.github.io/tosca/patterns/policytypes" name="Secure-Channel" policyType="behaviorPatternsLukas:Secure-Channel"/>
+                </Policies>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="SQL" type="relationsLukas:SQL" id="con_SQL_0">
                 <Properties>
@@ -109,6 +115,9 @@
                 </Properties>
                 <SourceElement ref="SpringWebApp_w1_0"/>
                 <TargetElement ref="Relational-Database_0"/>
+                <Policies>
+                    <Policy xmlns:behaviorPatternsLukas="https://lharzenetter.github.io/tosca/patterns/policytypes" name="Secure-Channel" policyType="behaviorPatternsLukas:Secure-Channel"/>
+                </Policies>
             </RelationshipTemplate>
         </TopologyTemplate>
     </ServiceTemplate>
