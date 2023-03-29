@@ -65,7 +65,7 @@
                         <ContainerPort>80</ContainerPort>
                         <ContainerID/>
                         <ContainerIP/>
-                        <ImageID>ubuntu:20.04</ImageID>
+                        <ImageID>ubuntu:22.04</ImageID>
                         <ContainerMountPath/>
                         <HostMountFiles/>
                         <PrivilegedMode/>
