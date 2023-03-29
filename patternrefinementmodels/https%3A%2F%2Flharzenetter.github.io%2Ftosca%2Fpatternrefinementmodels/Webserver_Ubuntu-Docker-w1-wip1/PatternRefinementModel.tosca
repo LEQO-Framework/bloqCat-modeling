@@ -58,7 +58,7 @@
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <Port>get_input: webserver_port</Port>
-                        <ContainerPort>get_input: webserver_port</ContainerPort>
+                        <ContainerPort>80</ContainerPort>
                         <ContainerID/>
                         <ContainerIP/>
                         <ImageID>ubuntu:20.04</ImageID>

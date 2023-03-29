@@ -34,7 +34,7 @@
                         <port/>
                         <user/>
                         <password/>
-                        <DBName/>
+                        <DBName>get_input: db_name</DBName>
                         <DBUser>get_input: db_user</DBUser>
                         <DBPassword>get_input: db_password</DBPassword>
                     </ex:Properties>
