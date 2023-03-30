@@ -44,7 +44,7 @@
             </RelationshipTemplate>
         </Detector>
         <RelationMappings>
-            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Execution-Environment_0" refinementNode="rs_UbuntuContainer_20.04-w1_0" id="relMap0"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Execution-Environment_0" refinementNode="rs_UbuntuContainer_22.04-w1_0" id="relMap0"/>
         </RelationMappings>
         <PermutationMappings/>
         <RefinementStructure>
@@ -60,7 +60,7 @@
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_20.04-w1" id="rs_UbuntuContainer_20.04-w1_0" winery:x="538" winery:y="419">
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_22.04-w1" id="rs_UbuntuContainer_22.04-w1_0" winery:x="538" winery:y="419">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <Port>get_input: spring_container_port</Port>
@@ -99,14 +99,14 @@
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
                 <Properties/>
                 <SourceElement ref="rs_SpringWebApp_w1_0"/>
-                <TargetElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <TargetElement ref="rs_UbuntuContainer_22.04-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
                 <SourceElement ref="rs_Java_11-w1_0"/>
-                <TargetElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <TargetElement ref="rs_UbuntuContainer_22.04-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="DependsOn" type="ToscaBaseTypes:DependsOn" id="rs_con_DependsOn_0">
                 <Properties>
@@ -119,7 +119,7 @@
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
-                <SourceElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <SourceElement ref="rs_UbuntuContainer_22.04-w1_0"/>
                 <TargetElement ref="rs_DockerEngine_w1_0"/>
             </RelationshipTemplate>
         </RefinementStructure>

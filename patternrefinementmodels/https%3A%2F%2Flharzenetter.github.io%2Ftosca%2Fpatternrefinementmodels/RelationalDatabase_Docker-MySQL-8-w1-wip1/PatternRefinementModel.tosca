@@ -41,7 +41,7 @@
         </Detector>
         <RelationMappings>
             <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Hypervisor_0" refinementNode="rs_DockerEngine_w1_0" id="relMap0"/>
-            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Execution-Environment_0" refinementNode="rs_UbuntuContainer_20.04-w1_0" id="relMap1"/>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Execution-Environment_0" refinementNode="rs_UbuntuContainer_22.04-w1_0" id="relMap1"/>
             <RelationMapping xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" relationType="relationsLukas:SQL" direction="ingoing" detectorNode="d_Relational-Database_0" refinementNode="rs_MySQL-DB_w1_0" id="relMap2"/>
         </RelationMappings>
         <PermutationMappings/>
@@ -74,7 +74,7 @@
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_20.04-w1" id="rs_UbuntuContainer_20.04-w1_0" winery:x="514" winery:y="476">
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_22.04-w1" id="rs_UbuntuContainer_22.04-w1_0" winery:x="514" winery:y="476">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <Port>get_input: mysql_port</Port>
@@ -108,13 +108,13 @@
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
                 <SourceElement ref="rs_MySQL-DBMS_8.0-w1_0"/>
-                <TargetElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <TargetElement ref="rs_UbuntuContainer_22.04-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
-                <SourceElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <SourceElement ref="rs_UbuntuContainer_22.04-w1_0"/>
                 <TargetElement ref="rs_DockerEngine_w1_0"/>
             </RelationshipTemplate>
         </RefinementStructure>

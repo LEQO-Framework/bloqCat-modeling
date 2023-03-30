@@ -65,7 +65,7 @@
                 </Properties>
                 <Capabilities/>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_20.04-w1" id="rs_UbuntuContainer_20.04-w1_0" winery:x="427" winery:y="418">
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:UbuntuContainer_22.04-w1" id="rs_UbuntuContainer_22.04-w1_0" winery:x="427" winery:y="418">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <Port>get_input: mosquitto_port</Port>
@@ -98,13 +98,13 @@
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
                 <SourceElement ref="rs_Mosquitto_2.0-w2-wip1_0"/>
-                <TargetElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <TargetElement ref="rs_UbuntuContainer_22.04-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
-                <SourceElement ref="rs_UbuntuContainer_20.04-w1_0"/>
+                <SourceElement ref="rs_UbuntuContainer_22.04-w1_0"/>
                 <TargetElement ref="rs_DockerEngine_w1_0"/>
             </RelationshipTemplate>
         </RefinementStructure>
