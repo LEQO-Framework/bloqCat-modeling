@@ -83,7 +83,7 @@
                     <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.06859538838405499"/>
                 </Capabilities>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral1="https://examples.opentosca.org/edmm/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="ntyIgeneral1:Alpine-Container_w1" id="DockerContainer_w10.29158695371631127" winery:x="124" winery:y="353">
+            <NodeTemplate xmlns:ntyIgeneral1="http://opentosca.org/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="ntyIgeneral1:Alpine-Container_w1" id="DockerContainer_w10.29158695371631127" winery:x="124" winery:y="353">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_29158695371631127</HostMountFiles>
