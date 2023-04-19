@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-WebApp-PublicCloud_AWS-w1-wip1">
-    <PatternRefinementModel isPdrm="no" name="WebApp-PublicCloud_AWS-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-WebApp-PublicCloud_UnpredictableWorkload-AWS-w2-wip1">
+    <PatternRefinementModel isPdrm="no" name="WebApp-PublicCloud_UnpredictableWorkload-AWS-w2-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
         <Detector>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="NGINX-Application_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:NGINX-Application_w1" id="d_NGINX-Application_w1_0" winery:x="409" winery:y="126">
                 <Properties>
@@ -20,17 +20,16 @@
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
                 </Properties>
                 <Capabilities/>
+                <Policies/>
             </NodeTemplate>
-            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Public-Cloud" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Public-Cloud" id="d_Public-Cloud_0" winery:x="494" winery:y="489">
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="AWS_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:AWS_w1-wip1" id="d_AWS_w1-wip1_0" winery:x="420" winery:y="489">
                 <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                    <ntyIgeneral:AWS_w1-wip1 xmlns="https://lharzenetter.github.io/tosca/nodetypes">
+                        <Account/>
+                    </ntyIgeneral:AWS_w1-wip1>
                 </Properties>
                 <Capabilities/>
             </NodeTemplate>
-            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
-                <SourceElement ref="d_Platform-as-a-Service-PaaS_0"/>
-                <TargetElement ref="d_Public-Cloud_0"/>
-            </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
@@ -38,9 +37,15 @@
                 <SourceElement ref="d_NGINX-Application_w1_0"/>
                 <TargetElement ref="d_Platform-as-a-Service-PaaS_0"/>
             </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
+                </Properties>
+                <SourceElement ref="d_Platform-as-a-Service-PaaS_0"/>
+                <TargetElement ref="d_AWS_w1-wip1_0"/>
+            </RelationshipTemplate>
         </Detector>
         <RelationMappings>
-            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Public-Cloud_0" refinementNode="rs_AWS_w1-wip1_0" id="relMap0"/>
             <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Platform-as-a-Service-PaaS_0" refinementNode="rs_ElasticBeanstalk_w1-wip1_0" id="relMap1"/>
         </RelationMappings>
         <PermutationMappings/>
@@ -103,6 +108,7 @@
         <AttributeMappings/>
         <StayMappings>
             <StayMapping detectorNode="d_NGINX-Application_w1_0" refinementNode="rs_NGINX-Application_w1_0" id="stayMap0"/>
+            <StayMapping detectorNode="d_AWS_w1-wip1_0" refinementNode="rs_AWS_w1-wip1_0" id="stayMap1"/>
         </StayMappings>
         <DeploymentArtifactMappings/>
         <PermutationOptions/>

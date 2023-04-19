@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-Webserver_Ubuntu-Docker-w1-wip1">
-    <PatternRefinementModel isPdrm="no" name="Webserver_Ubuntu-Docker-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+    <PatternRefinementModel isPdrm="yes" name="Webserver_Ubuntu-Docker-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
         <Detector>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Execution-Environment" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Execution-Environment" id="d_Execution-Environment_0" winery:x="452" winery:y="153">
                 <Properties>

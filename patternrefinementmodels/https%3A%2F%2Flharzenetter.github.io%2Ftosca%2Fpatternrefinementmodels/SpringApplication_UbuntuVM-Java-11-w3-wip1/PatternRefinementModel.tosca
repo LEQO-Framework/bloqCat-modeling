@@ -6,7 +6,7 @@
                 <Properties>
                     <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
                         <component_version/>
-                        <admin_credential/>
+                        <admin_credential>disabled</admin_credential>
                         <AppName/>
                         <Port/>
                     </otntypdInodetypes:properties>

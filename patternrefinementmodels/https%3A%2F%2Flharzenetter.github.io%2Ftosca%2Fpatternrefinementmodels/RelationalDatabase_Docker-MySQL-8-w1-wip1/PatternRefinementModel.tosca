@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-RelationalDatabase_Docker-MySQL-8-w1-wip1">
-    <PatternRefinementModel isPdrm="no" name="RelationalDatabase_Docker-MySQL-8-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+    <PatternRefinementModel isPdrm="yes" name="RelationalDatabase_Docker-MySQL-8-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
         <Detector>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Hypervisor" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Hypervisor" id="d_Hypervisor_0" winery:x="524" winery:y="461">
                 <Properties>
@@ -49,10 +49,6 @@
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="MySQL-DB_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:MySQL-DB_w1" id="rs_MySQL-DB_w1_0" winery:x="519" winery:y="142">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
-                        <name/>
-                        <port/>
-                        <user/>
-                        <password/>
                         <DBName>get_input: db_name</DBName>
                         <DBUser>get_input: db_user</DBUser>
                         <DBPassword>get_input: db_password</DBPassword>

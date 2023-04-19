@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-SpringApplication_UbuntuVM-Java-11-w2-wip1">
-    <PatternRefinementModel isPdrm="no" name="SpringApplication_UbuntuVM-Java-11-w2-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+    <PatternRefinementModel isPdrm="yes" name="SpringApplication_UbuntuVM-Java-11-w2-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
         <Detector>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="SpringWebApp_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:SpringWebApp_w1" id="d_SpringWebApp_w1_0" winery:x="610" winery:y="120">
                 <Properties>

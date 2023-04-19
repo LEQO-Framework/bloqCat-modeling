@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-SecureJMS_WebApp-Queue-w2-wip1">
-    <PatternRefinementModel isPdrm="no" name="SecureJMS_WebApp-Queue-w2-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+    <PatternRefinementModel isPdrm="yes" name="SecureJMS_WebApp-Queue-w2-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
         <Detector>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="WebApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:WebApplication" id="d_WebApplication_0" winery:x="453" winery:y="157">
                 <Properties>
@@ -10,7 +10,7 @@
                 </Properties>
                 <Capabilities/>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes"  name="Message-Channel" minInstances="1" maxInstances="1" type="ntyIgeneral:SQS-Queue_w1-wip1" id="d_Message-Channel_0" winery:x="891" winery:y="154">
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="Message-Channel" minInstances="1" maxInstances="1" type="ntyIgeneral:SQS-Queue_w1-wip1" id="d_Message-Channel_0" winery:x="891" winery:y="154">
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="JMS" type="relationsLukas:JMS" id="d_con_JMS_0">
@@ -32,7 +32,7 @@
                 </Properties>
                 <Capabilities/>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes"  name="Message-Channel" minInstances="1" maxInstances="1" type="ntyIgeneral:SQS-Queue_w1-wip1" id="rs_Message-Channel_0" winery:x="927" winery:y="151">
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="Message-Channel" minInstances="1" maxInstances="1" type="ntyIgeneral:SQS-Queue_w1-wip1" id="rs_Message-Channel_0" winery:x="927" winery:y="151">
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Secure-JMS" type="relationsLukas:Secure-JMS" id="rs_con_Secure-JMS_0">
