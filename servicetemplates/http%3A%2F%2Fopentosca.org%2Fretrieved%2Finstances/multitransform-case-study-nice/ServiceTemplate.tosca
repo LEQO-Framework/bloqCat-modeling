@@ -83,7 +83,7 @@
                     <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.06859538838405499"/>
                 </Capabilities>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral1="https://examples.opentosca.org/edmm/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="ntyIgeneral1:Alpine-Container" id="DockerContainer_w10.29158695371631127" winery:x="124" winery:y="353">
+            <NodeTemplate xmlns:ntyIgeneral1="https://examples.opentosca.org/edmm/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="ntyIgeneral1:Alpine-Container_w1" id="DockerContainer_w10.29158695371631127" winery:x="124" winery:y="353">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_29158695371631127</HostMountFiles>
@@ -287,14 +287,14 @@
                     </ex:Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="NodeJS_10.0" minInstances="1" maxInstances="1" type="otntyIgeneral:NodeJS_10.0" id="NodeJS_10.00.5022467777986721" winery:x="138" winery:y="193">
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="NodeJS_10" minInstances="1" maxInstances="1" type="otntyIgeneral:NodeJS_10-w1" id="NodeJS_10.00.5022467777986721" winery:x="138" winery:y="193">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <State>Running</State>
                     </ex:Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="otntyIgeneral:NodeJS-App_10.0" id="NodeJS-App_10.00.5344549038344469" winery:x="140" winery:y="35">
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="otntyIgeneral:NodeJS-App_10-w1" id="NodeJS-App_10.00.5344549038344469" winery:x="140" winery:y="35">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <State>Running</State>

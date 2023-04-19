@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/retrieved/instances" id="otIinstances-multitransform-case-study">
+    <ServiceTemplate name="multitransform-case-study" targetNamespace="http://opentosca.org/retrieved/instances" id="multitransform-case-study">
+        <Tags>
+            <Tag name="deploymentTechnology" value="Multi Transform"/>
+            <Tag name="jsonDeploymentTechnologies" value="[{&quot;id&quot;:&quot;kubernetes-8d1bf9bc-1358-406f-b8d0-90878217f00c&quot;,&quot;technologyId&quot;:&quot;kubernetes&quot;,&quot;managedIds&quot;:[&quot;DockerContainer_w10.1326044389132751&quot;,&quot;DockerContainer_w10.4140313325077062&quot;,&quot;DockerContainer_w10.15929274461974863&quot;,&quot;DockerContainer_w10.986747342027506&quot;,&quot;DockerContainer_w10.9225644370964354&quot;],&quot;discoveredIds&quot;:[&quot;DockerEngine_w10.829008509936326&quot;],&quot;properties&quot;:{&quot;clusterNamespace&quot;:&quot;sock-shop&quot;,&quot;kubeConfigContents&quot;:&quot;YXBpVmVyc2lvbjogdjEKY2x1c3RlcnM6Ci0gY2x1c3RlcjoKICAgIGNlcnRpZmljYXRlLWF1dGhvcml0eS1kYXRhOiBMUzB0TFMxQ1JVZEpUaUJEUlZKVVNVWkpRMEZVUlMwdExTMHRDazFKU1VNdmFrTkRRV1ZoWjBGM1NVSkJaMGxDUVVSQlRrSm5hM0ZvYTJsSE9YY3dRa0ZSYzBaQlJFRldUVkpOZDBWUldVUldVVkZFUlhkd2NtUlhTbXdLWTIwMWJHUkhWbnBOUWpSWVJGUkplazFFVVhkT1ZFVXhUWHBKZWsweGIxaEVWRTE2VFVSUmQwMXFSVEZOZWtsNlRURnZkMFpVUlZSTlFrVkhRVEZWUlFwQmVFMUxZVE5XYVZwWVNuVmFXRkpzWTNwRFEwRlRTWGRFVVZsS1MyOWFTV2gyWTA1QlVVVkNRbEZCUkdkblJWQkJSRU5EUVZGdlEyZG5SVUpCVFZjeENtcGFWVVp1U0ZkWVNscFdkVE0xTTBSNldtaDRia1l2TUZBelVteHRTa3hZUm1Rd1pHY3hWbEZVZW1WaWIxQlNVSEZZY1VRNFYxTkNhRkJMTWs4elRuWUtaRUZOUWl0T05IUnJaVnBpV25Ob1pUaEdhMkZ4WmtwTFpua3JhVUZxVUV4Tk9UbG1UMWRCYW0xSU9VcFZNR1oxVGpSS1pUZDFjMUEwY25sVFZtY3ZaUXBJY2pGRGExaEtXVmxrWVVwNmVtNVRSRTFpY2tOdlZWaExVVWwzVnl0VlFVSXpTVFJUZGtwRmNXbEJaRW81SzA1WldEWm5aMU5YZG5odU0zTXlTV1IwQ210eU0wVnJlVGN2YnpsU1p6ZFpZVE5EWm0wdlpWUkRTazVHVG5ObFZsSmlhVzlST0VsSVp5OHpSa05RUnpKb1NXcGhlRE5aTkROR2VtSXJiRUZrUXprS1FrSmxjMVpuTVhGSVRFVkJTbEZaVm1GdWNERlFSbkpuTUc5T2NtbFpSVWxDTjJSVmNGQjNhakpET1VOa1owVllNazFPTm5OMWF6bEdRVkpTY0hOUmRnbzNNRk51TUVaaVltbDZNVGRMVlVwelozSlZRMEYzUlVGQllVNWFUVVpqZDBSbldVUldVakJRUVZGSUwwSkJVVVJCWjB0clRVRTRSMEV4VldSRmQwVkNDaTkzVVVaTlFVMUNRV1k0ZDBoUldVUldVakJQUWtKWlJVWkNNbTV4WkVwb2VsSndlbk12THpSR00yRnBORE4wT1ROU01tTk5RbFZIUVRGVlpFVlJVVThLVFVGNVEwTnRkREZaYlZaNVltMVdNRnBZVFhkRVVWbEtTMjlhU1doMlkwNUJVVVZNUWxGQlJHZG5SVUpCU0d4b1dYY3dkekExV1VKWlFXdExTWFpaV2dvM2FFWlVOemhMVkhCbVUxWmhTbkJVTm5wWVJFRTFSMWxJVTFwT1YyUnJjakJOUzJ0UlZWRmFNMFpOZDFOQk5FcHlNM0JrVDNKWVNsSkVVV2h6YmxkMENpdHJkbFpyVFVWdWNTOVZOMjF2ZVdsd04wYzNZMDVIYW1kRFkyeHpPWG8yZG5KWVoyNXdlbWROYm0xRVJqZFJRbmMxU1ZsWlNYVktkVlZ0YjIxMmIyWUtjMHM1T1VzeWExRlhlbVZrUVZacFdYZGhheTlYWWpKQmVVc3dkRFpCVm1sR1pDdERZVEJrYlVwYVNHZ3hVRTVhY2xKMVRtTllNbVoxV0VscmRVMUVlQXBzTUZJd1JFbElORWRwWTJGUEswMXpUVlZVVDFKRFVYTjJRVzB3VFVsQ1ZYVjZLMHBrUlhaWVpGaHViSGN4WTJaSWRHVXhTRmRtZUZwdVlsWnJUMWM1Q21oM2VuSTBjVUl6VFVsa0wyNHhhbmRJV25KR1FtaFpjSGxZZWtKcGVFcE9kMXBZTTFseVNrOWFjazFvYldGbFkxRldhblJIZVZvNU5WaG5iVmRQVlRNS1VVTTBQUW90TFMwdExVVk9SQ0JEUlZKVVNVWkpRMEZVUlMwdExTMHRDZz09CiAgICBzZXJ2ZXI6IGh0dHBzOi8va3ViZXJuZXRlcy5kb2NrZXIuaW50ZXJuYWw6NjQ0MwogIG5hbWU6IGRvY2tlci1kZXNrdG9wCmNvbnRleHRzOgotIGNvbnRleHQ6CiAgICBjbHVzdGVyOiBkb2NrZXItZGVza3RvcAogICAgdXNlcjogZG9ja2VyLWRlc2t0b3AKICBuYW1lOiBkb2NrZXItZGVza3RvcApjdXJyZW50LWNvbnRleHQ6IGRvY2tlci1kZXNrdG9wCmtpbmQ6IENvbmZpZwpwcmVmZXJlbmNlczoge30KdXNlcnM6Ci0gbmFtZTogZG9ja2VyLWRlc2t0b3AKICB1c2VyOgogICAgY2xpZW50LWNlcnRpZmljYXRlLWRhdGE6IExTMHRMUzFDUlVkSlRpQkRSVkpVU1VaSlEwRlVSUzB0TFMwdENrMUpTVVJSYWtORFFXbHhaMEYzU1VKQlowbEpWMnRMWVhjclJHOUlLekIzUkZGWlNrdHZXa2xvZG1OT1FWRkZURUpSUVhkR1ZFVlVUVUpGUjBFeFZVVUtRWGhOUzJFelZtbGFXRXAxV2xoU2JHTjZRV1ZHZHpCNVRYcEJNRTFFVlhoT1ZFMTVUWHBPWVVaM01IbE9SRUV3VFZSamVFNXFRWGhOUkVwaFRVUlplQXBHZWtGV1FtZE9Wa0pCYjFSRWJrNDFZek5TYkdKVWNIUlpXRTR3V2xoS2VrMVNjM2RIVVZsRVZsRlJSRVY0U210aU1rNXlXbGhKZEZwdE9YbE1WMUpzQ21NeWREQmlNMEYzWjJkRmFVMUJNRWREVTNGSFUwbGlNMFJSUlVKQlVWVkJRVFJKUWtSM1FYZG5aMFZMUVc5SlFrRlJSRWhXYUcwdlZFcDBTSGd5YTJnS2QyMDJLMVlyYVZjcmEwWm9VWFphZDNGVldYbHpaRXhZWm1oMWFHdEpaMFZFYW1sMGRtSXZhbTk0V1hRdlRXa3dTMVo1WlZWcVFXRkJVelZGZHpOaGVBcE1Sa1Z1U21WYVRYb3lTRnB0WTBwSGQzbzNaMnhvTVVkaFpFUkpia1ZxU0RkRGFrOXlaRkpRWVhWbFlscFdTVUp5YkV3eGNITlRVa3BHWjA5elRVRlBDbGRNVURjeFNHZEVUMHQwWkZscGJHWjBNMlpGYVcxRUwyeFFRa3BwUTBKRmNuVjFZa3dyZW5rNFVXVlZkRWRDTDNoUk1IbDZXazB5YWs1NWJqUlJWa01LV0dsc1luaFJaVzVTVVc5RGFVSkhRMlEzYmpFeFRXMVFiRmRZZWxwQ1RGVjJRV3BCT1hrMmJuWXJRek42ZEdaV1JFbG9aeXRRU2pNMWFYTkRNM0kyYWdvd1JuVXJORXBZVWs5Q1dFSnZjR3A1VTBSdVpFWXlSMHBPVTNsUmNFUmtlSGxOYkVJeUwzTlpiVEIyVFVGS1MxRlNXbnBQVGtaeFRsZGxRVUpOYzB4dUNuTTRhWGhIWVhOMFFXZE5Ra0ZCUjJwa1ZFSjZUVUUwUjBFeFZXUkVkMFZDTDNkUlJVRjNTVVp2UkVGVVFtZE9Wa2hUVlVWRVJFRkxRbWRuY2tKblJVWUtRbEZqUkVGcVFVMUNaMDVXU0ZKTlFrRm1PRVZCYWtGQlRVSTRSMEV4VldSSmQxRlpUVUpoUVVaQ01tNXhaRXBvZWxKd2VuTXZMelJHTTJGcE5ETjBPUW96VWpKalRVSXdSMEV4VldSRlVWRlhUVUpUUTBWdFVuWlpNblJzWTJreGJXSXpTWFJhUjFaNllUTlNkbU5FUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HQ2tGQlQwTkJVVVZCYTA5WU9FWmpZamtyVFdwUVpITlJkWEpUV0RJeU5tSkZOR1F3ZGtzNVNtSlVOSFI1UW1aMlkzaHRhRVE0Ymt4TWEwMUhkblpNZVRVS1FtMVdOMVozY0VOclVFTXJZMGg2TmpaM1dXOXZjRmwxVVdkaldGSlRPV3AzU2tGelkweHRUa3hVWTI1SGRHWnZWVGd5Tkc1bVVFMUxVMEkwU0hKbVdBcDNRVmhUTUVKSmFIaG9hMEV6WVRkYWNUWllaakZGVTNsd05GTlNPRVZ3WjFaeFNGZE5TRUl4VkVsR2RETkxaa0ZoWTJaSmVsTnFOVGRKVlRrclNHeFhDa2gxUWxSellrbFlibWhaUjBkMFVVTmtjRzFaYUhORlpYUkdOVTlLY25VNFJtaDZaVXcxV0VsUWNUTnhRVEY1WkVReVQyRTVhR2t5UTAxQlRqTjRRaThLUWxwVWIwVnNTR2hyUjNSaVduQk5MelV4YjBOWlprNTNVbVZDWVhkSE1WcEpkSEZQV1ROTlUzVnBVbXg2VlZacVFrUkpZMVJqTW5nM04zTnpkMXAzVlFwUlVtWjNOVEkzWnpsMGJHTTRMMmRaYTBkT01ETlVTbEp5UVZKNlkwRTlQUW90TFMwdExVVk9SQ0JEUlZKVVNVWkpRMEZVUlMwdExTMHRDZz09CiAgICBjbGllbnQta2V5LWRhdGE6IExTMHRMUzFDUlVkSlRpQlNVMEVnVUZKSlZrRlVSU0JMUlZrdExTMHRMUXBOU1VsRmNFRkpRa0ZCUzBOQlVVVkJlREZaV25Zd2VXSlNPR1J3U1dOS2RYWnNabTlzZG5CQ1dWVk1NbU5MYkVkTmNraFRNVE0wWW05YVEwbENRVFEwQ25KaU1pODBOazFYVEdaNlNYUkRiR051YkVsM1IyZEZkVkpOVGpKelUzaFNTbmxZYlZSTk9XZ3lXbTVEVW5OTkt6UktXV1JTYlc1UmVVcDRTWGdyZDI4S2VuRXpWVlF5Y201dE1sWlRRV0UxVXpsaFlrVnJVMUpaUkhKRVFVUnNhWG9yT1ZJMFFYcHBjbGhYU1hCWU4yUXplRWx3Wnk4MVZIZFRXV2RuVWtzM2NncHRlUzl6T0haRlNHeE1VbWRtT0ZWT1RYTXlWRTV2ZW1Od0swVkdVV3cwY0ZjNFZVaHdNRlZMUVc5blVtZHVaVFU1WkZSS2FqVldiRGd5VVZNeFRIZEpDbmRRWTNWd055OW5kRGczV0RGUmVVbFpVR3A1WkN0WmNrRjBOaXR2T1VKaWRuVkRWakJVWjFaM1lVdFpPR3RuTlROU1pHaHBWRlZ6YTB0Uk0yTmpha29LVVdSMk4wZEtkRXg2UVVOVGEwVlhZM3BxVW1GcVZtNW5RVlJNUXpVM1VFbHpVbTF5VEZGSlJFRlJRVUpCYjBsQ1FVUlhVRXNyU0dKeGIyeFNlV2w1TkFvcmJIRkpZMnRXUjNad1VuTnJjSHBaZW5KVVIxWk9iSG94SzJKRlZqbGxTRWh5UjBsSU1uZENiMDg0UVZWamEyVndMMVZsVEdwQ0sybHlhMDVNTDBsUkNqY3dhM1ZvVENzd2NGSjZOMnhHYWtKRmVqZDVPWEpETlhNNVEwUk9XV05MVEVScVJVOW9lVkZ2SzFJNFFqbHVUbmhvY1dSRldXNVRSWGh5TTFsT1RUWUtRVVJ2TURjek5HMUdkREZFYURoNGFFWnVkMjVzYTBveEsxVTBORWhPV0N0RmRubFVURVYzY0hSVU1GcG1jRFJNZDBKUk1uRTRTRTlpVERSaFQzQlliZ3BsWlc5MEswZGtZekJVUmt0MWNUazNXSEZ2TjNZdlRuUmxSRnB1YjFOTE1HTTRZV040WmtsR1JUUXdRM0ZtVUZCcVMxaHdNbEZPYlVwUFUySlZjVGhMQ25Kd2JHVnBRVUZUUWxaMFdFcERNek5SUVhaUVVVbG1VRzExVkRsMlltSnRVa2x4YUZObU0wSm5RemxqVVcwNU9IaEJRMk5FSzFvdmNGbGhkM2Q0UzFjS2J6VjRaVTV5TUVObldVVkJOREJHUXpsaFVFeGFlRnBzUmtWV2RrNUthVzlZZDJ4UWJXbHBXR2R5YkRJeVlrVnJUR1owUkdKYVZYRkRWMUJUVURGS1pBcFpUbEJpY21SeWJVZ3JjMFJ6U2paTlRUUm1Xak5SU2s1TVFUVTVaSGRxVEdaVWVGcHpjSFpyUjB4dGRWQnhSRWx6TkZWcVVXMDRNSGM0ZFVaS1pHSlZDa2xMZFN0NVMxSm1UMDE0VVdoUk9FWlBMMnRIWlZjNGFFaEVkVGxHYkU1aVpVeDZSVUo0U0VsV1FYa3ZVbWRIVm5SaGQyVTVSamhEWjFsRlFUUkplazhLY2twNlZsRkxabGx3WVROMVdHNTVOMWs1ZGxwSlJ6VmlaazFyY2sxcE5HVnpiSFZHWlZwdk9HWlhNV2xTV0dsd1ZVSjRRVGRIU0VsWmN6UnVZbWwyZEFvd2MxQnRjVnBPUTNaSmIzTnZSMVZUUTFKS2NIa3hSM1JOWW1sQ1FXVlBha1YxVUc1MWF6SnNSamxIVUV0S1J6Wm9WR3hUZFVGNFIyZHZWMGhMYlhFM0NrbE5TalUwVUhreUx6aHpjVk42ZG1zemRuQmtjMmQwWWt4S1UyZGxUa3MyVjNWcWMyRXZUVU5uV1VWQmVFTmhWbGhDTlc1ME1pOHJRMUJSZUcwd01WVUtjbk56UkcxVlZVZEhXVUp3YkVaaGQzRnlkV2R3U25CSFkxWndiVzg1T0RneVFrZHNTVXhsTjFBM2RVUk5UbEkwYjFKWVYwNHdkMEZRYkVjelpUWkljd3AxWjJvMFVuaEZSbGhWTkZCc2RVVkRkWFZxYXpKVVpsSmlSbkJxWWpWcGR5dG5OR3B0TVRBNVJETktVelJpV205U2VUWlljSGROUkhGcVNIQTRURms0Q2xWelpHcDZPVXBMWm1wdFQyTjVaREZEUWpCeWFuSk5RMmRaUVZsdVZtSkxaRk5oY2xBM2NuWTNia1ZEZVc5dFFVZE5iR3RXVEZOVGNWUnhhVGxaZEVnS05HVkNkbmhCYURsa01VRmxZbGQxYURkSVluaGpiMkZWZW1sU2ExZ3dlR2x1YW1KaGRqbHVRVGhUVTFSTlNVVmFibGh6WWxodmFYUjFjSFp3Y1ZKd2JncEtOMUoyU2pkUVFrOUxaVWwxZGtSSVUyUkdXR1UwUkM5TVkxQjZWV3d2VVRVMFExVjFVamhYVTNnNFNIZEVhMGRsUlhSMFExQkhiRzlYVlRFeVYwOHdDazB6VVROSlVVdENaMUZFVEZFd1lXWmplVEJXVkZkclpWVklhbFpoYW1KTVNEQllUMjVSV1RKb2NYUnNNamxqU2pNek0xQmpVRUp1V0dWM01ESm1aMGdLVjNOYVpFcHZTV1ZWVVVaNU4za3pabVpwTDNJNVFsaEZOMUoxV0VSMFF6ZG9ZVlJ0YVUxaFNEQlFTbUZOVm1wVGMwZFlhMHhuYkVod2JVOVBTbEZvU3dwMU5HNVVUMlJaVWxkWGFqWTVkRFZoY2taaFMweDVTV1pJVEhaVVkwRmFjMVk0U1dzelNrWTBabWR3TVdOM1pVUmhVek4zZGxFOVBRb3RMUzB0TFVWT1JDQlNVMEVnVUZKSlZrRlVSU0JMUlZrdExTMHRMUW89Cg==&quot;,&quot;cluster_ip&quot;:&quot;https://kubernetes.docker.internal:6443&quot;}},{&quot;id&quot;:&quot;puppet-653ef0f5-8811-4f31-8f60-e9fb4466f880&quot;,&quot;technologyId&quot;:&quot;puppet&quot;,&quot;managedIds&quot;:[&quot;puppet-agent-mysqld&quot;,&quot;puppet-agent-Mysql_database&quot;,&quot;puppet-agent-catalogue-app&quot;],&quot;discoveredIds&quot;:[&quot;puppet-agent&quot;,&quot;OpenStack_22-Victoria-w10.9274697313497295&quot;],&quot;properties&quot;:{&quot;MasterPort&quot;:&quot;22&quot;,&quot;MasterUserName&quot;:&quot;ubuntu&quot;,&quot;MasterPrivateKey&quot;:&quot;-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA0U6+q8ZWIzj3nUtsitdVgOWHtmDbWTEbrygUQam63P3/9Beq\nsV4fsYrV757HnuYrZ3xiawFAbrj6fl2xQLVrGL3dzcVkKoJHOn+PHgTf3mnbAEqE\nFC/eVtPNpdQ/HvkfhXoYMQEUw+2UmX5aDYI2tFc6SuWfMCvYl4z+OhKxX4ihVej6\n00FNkGvQcUfWoGwcxDSRcCsebaI1TRKopigoEAxKcqiO0pqkBc+r5Bcxf4Nebgif\nUwciOeyOBiA9/NmaBI4NPSmT/VxLjlA2A7kQgvm7HshK1mmlhwvXOiIq9EKGDro7\n3Q9FCwQgMpt3Yj5M9H0X/mGKT56leSXk2I1S+wIDAQABAoIBACjMx8AmNk5BYYso\n06yw0vsAQxcbBEb7mqDnGCPAmStQ297R6jUO2vC51oASHGluBpHyniCrqsqqhjGx\nw8aQVqMJB75/tsnOgWH20YgRfS4WxljlLZ/dwOJ+AP1NRUydVTaomSScSFb07d2J\n0rYFZvJ6emN1JTW3pk3MbxYU5LxxRDDqTTO1ll4lM7biOxGt5yKiZCm94bPgR/Qm\n5M357vbyBNMq9VOTsTH0NQwNXHCTP/v998q+dOYMQKHCeXKQ5/ziQfxw1vubEjOo\n0SRmQsuMvY59+gktoRNifOL0OPVl4pbtZxY/Uhsv2cnuXV99u6Q/PzVJzeMiEszY\n829rs2ECgYEA+scEEKRHRq7jIFOZcHqdVCfnVvYNpI9nSKyEIC99HXnhXm/P0sWE\nkHGEtf9CGiN0q1zo/19SewHAqjZHLLlPQ//V7+glqiUFNWO00fYqlH5CC8leP1nj\npjVwpvEGxBZAhhT9sCZKujq7cMul7kN/mVXsmMaQSC4nk0BgpHTv8pECgYEA1aqj\ndvAtoEk0fH5PoocEpw3km68oaJREGwyXQD6+gCN755lI511xW/zed/Z1ah9ddk2p\nqKJ7aJZFr8pBPyw1LblTuJn0EvTa0+cDvRUfkFyol+IZLSYpVM4ywlyu3yEzweDE\nlMdU+i5UFoIHZ4mSStCqHi2EXVhaZYGJoSFxWssCgYEA2jDgQ457iW9OpGi4Xxn/\n2yHg8VOiKSSwS5X2W36WEFhkEuOb4ZoDLh3mxubx34Yr05FCFDcer3Gl7TLOmIYf\nBl4JCPRmGPSe5IX85JWXFJ4J3vF0dBBEtu9WNZoONfvaZg7Lb0DR0diaD5jQpU7L\nLWGKOp7BGFw4CLGBpHUt9FECgYB2Dav3oUh0UT4wstFpKVSGwIRZCHQ5JAJlN5Wy\nJ3i17+Ub13OSceyaOKLqgT/qfJ31KX/d7rhk1vJ16DgYoWJYexco3dcfSi5F+lP0\neuFPsAJuuLvUWEtp0ev1u6PbIMsqCfhTg7cN698F+J4CtN4hfB0iQ1/o+1Im12Wl\no4av9QKBgQCNA7kaJzKvLUf68TXcCj0pOZAxblHoLZoZ+0yMeg5CybhmIQQoR9zr\nc3XzQ9lgK8dm4mFbUoFFOkri6ttUxTPVwDu+va5da3Sr+pme71I4+QNeFybIIU1V\ncvIVyDlmZmozSMq9ciTGzd4RCQFY/fXfyv1PfzlPLFHklLpJhd3ukA==\n-----END RSA PRIVATE KEY-----\n&quot;,&quot;MasterIP&quot;:&quot;193.196.53.189&quot;}},{&quot;id&quot;:&quot;terraform-backend-06551035-1228-4eb1-9015-c72f27e88c3e&quot;,&quot;technologyId&quot;:&quot;terraform&quot;,&quot;managedIds&quot;:[&quot;puppet-agent&quot;],&quot;discoveredIds&quot;:null,&quot;properties&quot;:{&quot;Version&quot;:&quot;1.3.5&quot;}}]"/>
+            <Tag name="jsonDiscoveryPlugins" value="[{&quot;id&quot;:&quot;terraform&quot;,&quot;discoveredIds&quot;:[]},{&quot;id&quot;:&quot;MySQL-DBMS&quot;,&quot;discoveredIds&quot;:[&quot;puppet-agent-mysqld&quot;]},{&quot;id&quot;:&quot;Java&quot;,&quot;discoveredIds&quot;:[&quot;DockerContainer_w10.1326044389132751&quot;,&quot;Java_8-w10.6673670721552816&quot;]}]"/>
+        </Tags>
+        <TopologyTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="40ccf208-9164-4161-bdad-e6d2595aa909" minInstances="1" maxInstances="1" type="ntyIgeneral1:Compute" id="40ccf208-9164-4161-bdad-e6d2595aa909" winery:x="725" winery:y="941">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <State>Running</State>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="local_storage" type="rtyIgeneral:Attachment" id="local_storageCompute0.4870658060733397"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="host" type="ctyIgeneral:Compute" id="hostCompute0.4870658060733397"/>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="endpoint" type="ctyIgeneral:Admin" id="endpointCompute0.4870658060733397"/>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="os" type="ctyIgeneral:OperatingSystem" id="osCompute0.4870658060733397"/>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="scalable" type="ctyIgeneral:Scalable" id="scalableCompute0.4870658060733397"/>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="binding" type="ctyIgeneral:Bindable" id="bindingCompute0.4870658060733397"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="KubeDockerEngine" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerEngine_w1" id="DockerEngine_w10.829008509936326" winery:x="895" winery:y="786">
+                <Properties>
+                    <otntyIproperties:DockerEngine_Properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties" xmlns="http://opentosca.org/nodetypes/properties">
+                        <DockerEngineURL>tcp://kubernetes.docker.internal:2375</DockerEngineURL>
+                        <DockerEngineCertificate/>
+                        <State>Running</State>
+                    </otntyIproperties:DockerEngine_Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="DockerRuntime" type="otctyIgeneral:DockerRuntime" id="DockerRuntimeDockerEngine_w10.829008509936326"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="carts" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w10.1326044389132751" winery:x="484" winery:y="480">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_1326044389132751</HostMountFiles>
+                        <ContainerIP>10.1.0.157</ContainerIP>
+                        <PrivilegedMode>get_input: PrivilegedMode_DockerContainer_w10_1326044389132751</PrivilegedMode>
+                        <ContainerID>c642608d7e231961e9a242b8b9bea656e3aa54a205381aa8d1612c3afd793044</ContainerID>
+                        <ContainerMountPath>get_input: ContainerMountPath_DockerContainer_w10_1326044389132751</ContainerMountPath>
+                        <Port>get_input: Port_DockerContainer_w10_1326044389132751</Port>
+                        <ContainerPort>get_input: ContainerPort_DockerContainer_w10_1326044389132751</ContainerPort>
+                        <ImageID>weaveworksdemos/carts:0.4.8</ImageID>
+                        <State>Running</State>
+                        <PodName>carts-78d7c69cb8-6wrsn</PodName>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqDockerRuntime" type="otrtyIgeneral:DockerRuntime" id="ReqDockerRuntimeDockerContainer_w10.1326044389132751"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.1326044389132751"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="carts-db" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w10.4140313325077062" winery:x="826" winery:y="487">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_4140313325077062</HostMountFiles>
+                        <ContainerIP>10.1.0.170</ContainerIP>
+                        <PrivilegedMode>get_input: PrivilegedMode_DockerContainer_w10_4140313325077062</PrivilegedMode>
+                        <ContainerID>c08654410cd84e791c7ea1532067b8ed15ef7f0a8e0f75e9e9f02c493ffdf3d2</ContainerID>
+                        <ContainerMountPath>get_input: ContainerMountPath_DockerContainer_w10_4140313325077062</ContainerMountPath>
+                        <Port>get_input: Port_DockerContainer_w10_4140313325077062</Port>
+                        <ContainerPort>get_input: ContainerPort_DockerContainer_w10_4140313325077062</ContainerPort>
+                        <ImageID>mongo</ImageID>
+                        <State>Running</State>
+                        <PodName>carts-db-6dcb4498d4-pkmhn</PodName>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqDockerRuntime" type="otrtyIgeneral:DockerRuntime" id="ReqDockerRuntimeDockerContainer_w10.4140313325077062"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.4140313325077062"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w10.15929274461974863" winery:x="74" winery:y="577">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_15929274461974863</HostMountFiles>
+                        <ContainerIP>10.1.0.162</ContainerIP>
+                        <PrivilegedMode>get_input: PrivilegedMode_DockerContainer_w10_15929274461974863</PrivilegedMode>
+                        <ContainerID>ec69e0acab2bd3385551f2c572f8705b3cf0ceb533a98392f8325d422861db2b</ContainerID>
+                        <ContainerMountPath>get_input: ContainerMountPath_DockerContainer_w10_15929274461974863</ContainerMountPath>
+                        <Port>get_input: Port_DockerContainer_w10_15929274461974863</Port>
+                        <ContainerPort>get_input: ContainerPort_DockerContainer_w10_15929274461974863</ContainerPort>
+                        <ImageID>lharzenetter/sockshopfrontend</ImageID>
+                        <State>Running</State>
+                        <PodName>front-end-587c67667c-wd792</PodName>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqDockerRuntime" type="otrtyIgeneral:DockerRuntime" id="ReqDockerRuntimeDockerContainer_w10.15929274461974863"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.15929274461974863"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="orders" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w10.986747342027506" winery:x="1072" winery:y="604">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_986747342027506</HostMountFiles>
+                        <ContainerIP>10.1.0.168</ContainerIP>
+                        <PrivilegedMode>get_input: PrivilegedMode_DockerContainer_w10_986747342027506</PrivilegedMode>
+                        <ContainerID>7318fa7a3ba49ad935181640357f4cca50238aaa2ec3e7e201892784b10b69d7</ContainerID>
+                        <ContainerMountPath>get_input: ContainerMountPath_DockerContainer_w10_986747342027506</ContainerMountPath>
+                        <Port>get_input: Port_DockerContainer_w10_986747342027506</Port>
+                        <ContainerPort>get_input: ContainerPort_DockerContainer_w10_986747342027506</ContainerPort>
+                        <ImageID>weaveworksdemos/orders:0.4.7</ImageID>
+                        <State>Running</State>
+                        <PodName>orders-6697b9d66d-6gfms</PodName>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqDockerRuntime" type="otrtyIgeneral:DockerRuntime" id="ReqDockerRuntimeDockerContainer_w10.986747342027506"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.986747342027506"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="orders-db" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w10.9225644370964354" winery:x="352" winery:y="708">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_9225644370964354</HostMountFiles>
+                        <ContainerIP>10.1.0.171</ContainerIP>
+                        <PrivilegedMode>get_input: PrivilegedMode_DockerContainer_w10_9225644370964354</PrivilegedMode>
+                        <ContainerID>236f9773c03f589e4443771be642d1635af4df2f06050af720cc1b468ea15865</ContainerID>
+                        <ContainerMountPath>get_input: ContainerMountPath_DockerContainer_w10_9225644370964354</ContainerMountPath>
+                        <Port>get_input: Port_DockerContainer_w10_9225644370964354</Port>
+                        <ContainerPort>get_input: ContainerPort_DockerContainer_w10_9225644370964354</ContainerPort>
+                        <ImageID>mongo</ImageID>
+                        <State>Running</State>
+                        <PodName>orders-db-7bc7f6cff5-82kfg</PodName>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqDockerRuntime" type="otrtyIgeneral:DockerRuntime" id="ReqDockerRuntimeDockerContainer_w10.9225644370964354"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.9225644370964354"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="puppet-agent" minInstances="1" maxInstances="1" type="otntyIgeneral:Ubuntu-VM_20.04-w1" id="puppet-agent" winery:x="1871" winery:y="441">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <VMPublicKey>get_input: VMPublicKey_puppet-agent</VMPublicKey>
+                        <VMPrivateKey>-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA0U6+q8ZWIzj3nUtsitdVgOWHtmDbWTEbrygUQam63P3/9Beq
+sV4fsYrV757HnuYrZ3xiawFAbrj6fl2xQLVrGL3dzcVkKoJHOn+PHgTf3mnbAEqE
+FC/eVtPNpdQ/HvkfhXoYMQEUw+2UmX5aDYI2tFc6SuWfMCvYl4z+OhKxX4ihVej6
+00FNkGvQcUfWoGwcxDSRcCsebaI1TRKopigoEAxKcqiO0pqkBc+r5Bcxf4Nebgif
+UwciOeyOBiA9/NmaBI4NPSmT/VxLjlA2A7kQgvm7HshK1mmlhwvXOiIq9EKGDro7
+3Q9FCwQgMpt3Yj5M9H0X/mGKT56leSXk2I1S+wIDAQABAoIBACjMx8AmNk5BYYso
+06yw0vsAQxcbBEb7mqDnGCPAmStQ297R6jUO2vC51oASHGluBpHyniCrqsqqhjGx
+w8aQVqMJB75/tsnOgWH20YgRfS4WxljlLZ/dwOJ+AP1NRUydVTaomSScSFb07d2J
+0rYFZvJ6emN1JTW3pk3MbxYU5LxxRDDqTTO1ll4lM7biOxGt5yKiZCm94bPgR/Qm
+5M357vbyBNMq9VOTsTH0NQwNXHCTP/v998q+dOYMQKHCeXKQ5/ziQfxw1vubEjOo
+0SRmQsuMvY59+gktoRNifOL0OPVl4pbtZxY/Uhsv2cnuXV99u6Q/PzVJzeMiEszY
+829rs2ECgYEA+scEEKRHRq7jIFOZcHqdVCfnVvYNpI9nSKyEIC99HXnhXm/P0sWE
+kHGEtf9CGiN0q1zo/19SewHAqjZHLLlPQ//V7+glqiUFNWO00fYqlH5CC8leP1nj
+pjVwpvEGxBZAhhT9sCZKujq7cMul7kN/mVXsmMaQSC4nk0BgpHTv8pECgYEA1aqj
+dvAtoEk0fH5PoocEpw3km68oaJREGwyXQD6+gCN755lI511xW/zed/Z1ah9ddk2p
+qKJ7aJZFr8pBPyw1LblTuJn0EvTa0+cDvRUfkFyol+IZLSYpVM4ywlyu3yEzweDE
+lMdU+i5UFoIHZ4mSStCqHi2EXVhaZYGJoSFxWssCgYEA2jDgQ457iW9OpGi4Xxn/
+2yHg8VOiKSSwS5X2W36WEFhkEuOb4ZoDLh3mxubx34Yr05FCFDcer3Gl7TLOmIYf
+Bl4JCPRmGPSe5IX85JWXFJ4J3vF0dBBEtu9WNZoONfvaZg7Lb0DR0diaD5jQpU7L
+LWGKOp7BGFw4CLGBpHUt9FECgYB2Dav3oUh0UT4wstFpKVSGwIRZCHQ5JAJlN5Wy
+J3i17+Ub13OSceyaOKLqgT/qfJ31KX/d7rhk1vJ16DgYoWJYexco3dcfSi5F+lP0
+euFPsAJuuLvUWEtp0ev1u6PbIMsqCfhTg7cN698F+J4CtN4hfB0iQ1/o+1Im12Wl
+o4av9QKBgQCNA7kaJzKvLUf68TXcCj0pOZAxblHoLZoZ+0yMeg5CybhmIQQoR9zr
+c3XzQ9lgK8dm4mFbUoFFOkri6ttUxTPVwDu+va5da3Sr+pme71I4+QNeFybIIU1V
+cvIVyDlmZmozSMq9ciTGzd4RCQFY/fXfyv1PfzlPLFHklLpJhd3ukA==
+-----END RSA PRIVATE KEY-----
+</VMPrivateKey>
+                        <VMUserPassword>get_input: VMUserPassword_puppet-agent</VMUserPassword>
+                        <MasterUserName>ubuntu</MasterUserName>
+                        <VMInstanceID>574575cb-7591-4dac-a436-adfe2a1d605f</VMInstanceID>
+                        <PuppetEnvironments>production</PuppetEnvironments>
+                        <MasterPrivateKey>-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA0U6+q8ZWIzj3nUtsitdVgOWHtmDbWTEbrygUQam63P3/9Beq
+sV4fsYrV757HnuYrZ3xiawFAbrj6fl2xQLVrGL3dzcVkKoJHOn+PHgTf3mnbAEqE
+FC/eVtPNpdQ/HvkfhXoYMQEUw+2UmX5aDYI2tFc6SuWfMCvYl4z+OhKxX4ihVej6
+00FNkGvQcUfWoGwcxDSRcCsebaI1TRKopigoEAxKcqiO0pqkBc+r5Bcxf4Nebgif
+UwciOeyOBiA9/NmaBI4NPSmT/VxLjlA2A7kQgvm7HshK1mmlhwvXOiIq9EKGDro7
+3Q9FCwQgMpt3Yj5M9H0X/mGKT56leSXk2I1S+wIDAQABAoIBACjMx8AmNk5BYYso
+06yw0vsAQxcbBEb7mqDnGCPAmStQ297R6jUO2vC51oASHGluBpHyniCrqsqqhjGx
+w8aQVqMJB75/tsnOgWH20YgRfS4WxljlLZ/dwOJ+AP1NRUydVTaomSScSFb07d2J
+0rYFZvJ6emN1JTW3pk3MbxYU5LxxRDDqTTO1ll4lM7biOxGt5yKiZCm94bPgR/Qm
+5M357vbyBNMq9VOTsTH0NQwNXHCTP/v998q+dOYMQKHCeXKQ5/ziQfxw1vubEjOo
+0SRmQsuMvY59+gktoRNifOL0OPVl4pbtZxY/Uhsv2cnuXV99u6Q/PzVJzeMiEszY
+829rs2ECgYEA+scEEKRHRq7jIFOZcHqdVCfnVvYNpI9nSKyEIC99HXnhXm/P0sWE
+kHGEtf9CGiN0q1zo/19SewHAqjZHLLlPQ//V7+glqiUFNWO00fYqlH5CC8leP1nj
+pjVwpvEGxBZAhhT9sCZKujq7cMul7kN/mVXsmMaQSC4nk0BgpHTv8pECgYEA1aqj
+dvAtoEk0fH5PoocEpw3km68oaJREGwyXQD6+gCN755lI511xW/zed/Z1ah9ddk2p
+qKJ7aJZFr8pBPyw1LblTuJn0EvTa0+cDvRUfkFyol+IZLSYpVM4ywlyu3yEzweDE
+lMdU+i5UFoIHZ4mSStCqHi2EXVhaZYGJoSFxWssCgYEA2jDgQ457iW9OpGi4Xxn/
+2yHg8VOiKSSwS5X2W36WEFhkEuOb4ZoDLh3mxubx34Yr05FCFDcer3Gl7TLOmIYf
+Bl4JCPRmGPSe5IX85JWXFJ4J3vF0dBBEtu9WNZoONfvaZg7Lb0DR0diaD5jQpU7L
+LWGKOp7BGFw4CLGBpHUt9FECgYB2Dav3oUh0UT4wstFpKVSGwIRZCHQ5JAJlN5Wy
+J3i17+Ub13OSceyaOKLqgT/qfJ31KX/d7rhk1vJ16DgYoWJYexco3dcfSi5F+lP0
+euFPsAJuuLvUWEtp0ev1u6PbIMsqCfhTg7cN698F+J4CtN4hfB0iQ1/o+1Im12Wl
+o4av9QKBgQCNA7kaJzKvLUf68TXcCj0pOZAxblHoLZoZ+0yMeg5CybhmIQQoR9zr
+c3XzQ9lgK8dm4mFbUoFFOkri6ttUxTPVwDu+va5da3Sr+pme71I4+QNeFybIIU1V
+cvIVyDlmZmozSMq9ciTGzd4RCQFY/fXfyv1PfzlPLFHklLpJhd3ukA==
+-----END RSA PRIVATE KEY-----
+</MasterPrivateKey>
+                        <MasterIP>193.196.53.189</MasterIP>
+                        <VMType>m1.small</VMType>
+                        <VMKeyPairName>BWCloud</VMKeyPairName>
+                        <VMIP>193.196.55.178</VMIP>
+                        <State>Running</State>
+                        <VMUserName>ubuntu</VMUserName>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="ReqCanHostUbuntuVMUbuntu-VM_20.04-w10.27899201577832566"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemUbuntu-VM_20.04-w10.27899201577832566"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="OpenStack Compute" minInstances="1" maxInstances="1" type="otntyIgeneral:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w10.9274697313497295" winery:x="390" winery:y="619">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <HypervisorApplicationSecret>get_input: HypervisorApplicationSecret_OpenStack_22-Victoria-w10_9274697313497295</HypervisorApplicationSecret>
+                        <HypervisorEndpoint>get_input: HypervisorEndpoint_OpenStack_22-Victoria-w10_9274697313497295</HypervisorEndpoint>
+                        <State>Running</State>
+                        <puppetInstanceType>OpenStack Compute</puppetInstanceType>
+                        <HypervisorApplicationID>get_input: HypervisorApplicationID_OpenStack_22-Victoria-w10_9274697313497295</HypervisorApplicationID>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" type="otctyIgeneral:CapCanHostUbuntuVM" id="CapCanHostUbuntuVMOpenStack_22-Victoria-w10.9274697313497295"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="mysqld" minInstances="1" maxInstances="1" type="otntyIgeneral:MariaDBMS_10-w2" id="puppet-agent-mysqld" winery:x="1767" winery:y="253">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <DBMSUser>get_input: DBMSUser_puppet-agent-mysqld</DBMSUser>
+                        <State>Running</State>
+                        <puppetInstanceType>mysqld</puppetInstanceType>
+                        <DBMSPort>3306</DBMSPort>
+                        <DBMSPassword>get_input: DBMSPassword_puppet-agent-mysqld</DBMSPassword>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Mysql_database" minInstances="1" maxInstances="1" type="otntyIgeneral:MySQL-DB_w1" id="puppet-agent-Mysql_database" winery:x="1788" winery:y="116">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <DBPassword>get_input: DBPassword_puppet-agent-Mysql_database</DBPassword>
+                        <State>Running</State>
+                        <DBName>get_input: DBName_puppet-agent-Mysql_database</DBName>
+                        <DBUser>get_input: DBUser_puppet-agent-Mysql_database</DBUser>
+                        <puppetInstanceType>Mysql_database</puppetInstanceType>
+                    </ex:Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqDBMS" type="otrtyIgeneral:ReqMySQLDBMS" id="ReqDBMSMySQL-DB_w10.5879528860980442"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="catalogue-app" minInstances="1" maxInstances="1" type="ntyIgeneral1:SoftwareComponent" id="puppet-agent-catalogue-app" winery:x="1407" winery:y="270">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <State>Running</State>
+                        <admin_credential>get_input: admin_credential_puppet-agent-catalogue-app</admin_credential>
+                        <puppetInstanceType>catalogue-app</puppetInstanceType>
+                        <component_version>get_input: component_version_puppet-agent-catalogue-app</component_version>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Java_8-w1" minInstances="1" maxInstances="1" type="otntyIgeneral:Java_8-w1" id="Java_8-w10.6673670721552816" winery:x="484" winery:y="320">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <State>Running</State>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerEngine_w10.829008509936326-HostedOn-40ccf208-9164-4161-bdad-e6d2595aa909">
+                <SourceElement ref="DockerEngine_w10.829008509936326"/>
+                <TargetElement ref="40ccf208-9164-4161-bdad-e6d2595aa909"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w10.1326044389132751-HostedOn-DockerEngine_w10.829008509936326">
+                <SourceElement ref="DockerContainer_w10.1326044389132751"/>
+                <TargetElement ref="DockerEngine_w10.829008509936326"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w10.4140313325077062-HostedOn-DockerEngine_w10.829008509936326">
+                <SourceElement ref="DockerContainer_w10.4140313325077062"/>
+                <TargetElement ref="DockerEngine_w10.829008509936326"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w10.15929274461974863-HostedOn-DockerEngine_w10.829008509936326">
+                <SourceElement ref="DockerContainer_w10.15929274461974863"/>
+                <TargetElement ref="DockerEngine_w10.829008509936326"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w10.986747342027506-HostedOn-DockerEngine_w10.829008509936326">
+                <SourceElement ref="DockerContainer_w10.986747342027506"/>
+                <TargetElement ref="DockerEngine_w10.829008509936326"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w10.9225644370964354-HostedOn-DockerEngine_w10.829008509936326">
+                <SourceElement ref="DockerContainer_w10.9225644370964354"/>
+                <TargetElement ref="DockerEngine_w10.829008509936326"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-puppet-agent-HostedOn-OpenStack_22-Victoria-w10.9274697313497295">
+                <SourceElement ref="puppet-agent"/>
+                <TargetElement ref="OpenStack_22-Victoria-w10.9274697313497295"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-puppet-agent-mysqld-HostedOn-puppet-agent">
+                <SourceElement ref="puppet-agent-mysqld"/>
+                <TargetElement ref="puppet-agent"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-puppet-agent-Mysql_database-HostedOn-puppet-agent-mysqld">
+                <SourceElement ref="puppet-agent-Mysql_database"/>
+                <TargetElement ref="puppet-agent-mysqld"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-puppet-agent-catalogue-app-HostedOn-puppet-agent">
+                <SourceElement ref="puppet-agent-catalogue-app"/>
+                <TargetElement ref="puppet-agent"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-3ab7d0e3-ef1a-4a17-83aa-679683721e5e">
+                <SourceElement ref="Java_8-w10.6673670721552816"/>
+                <TargetElement ref="DockerContainer_w10.1326044389132751"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>
