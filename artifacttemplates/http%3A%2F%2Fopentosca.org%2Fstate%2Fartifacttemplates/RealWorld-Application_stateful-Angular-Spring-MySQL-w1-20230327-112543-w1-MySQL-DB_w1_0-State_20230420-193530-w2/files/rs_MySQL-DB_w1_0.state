@@ -1,0 +1,238 @@
+-- MySQL dump 10.13  Distrib 8.0.32, for Linux (x86_64)
+--
+-- Host: localhost    Database: realworld
+-- ------------------------------------------------------
+-- Server version	8.0.32-0ubuntu0.22.04.2
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `article_favorites`
+--
+
+DROP TABLE IF EXISTS `article_favorites`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `article_favorites` (
+  `article_id` varchar(255) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  PRIMARY KEY (`article_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article_favorites`
+--
+
+LOCK TABLES `article_favorites` WRITE;
+/*!40000 ALTER TABLE `article_favorites` DISABLE KEYS */;
+/*!40000 ALTER TABLE `article_favorites` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `article_tags`
+--
+
+DROP TABLE IF EXISTS `article_tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `article_tags` (
+  `article_id` varchar(255) NOT NULL,
+  `tag_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `article_tags`
+--
+
+LOCK TABLES `article_tags` WRITE;
+/*!40000 ALTER TABLE `article_tags` DISABLE KEYS */;
+/*!40000 ALTER TABLE `article_tags` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `articles`
+--
+
+DROP TABLE IF EXISTS `articles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `articles` (
+  `id` varchar(255) NOT NULL,
+  `user_id` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` text,
+  `body` text,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `articles`
+--
+
+LOCK TABLES `articles` WRITE;
+/*!40000 ALTER TABLE `articles` DISABLE KEYS */;
+INSERT INTO `articles` VALUES ('9cbd8513-b341-4e73-be0b-341ff14f2e31','fc8b5c62-78f6-49ce-95a3-af70f5e60364','neuer-artikel','Neuer Artikel','asdjklf klasjdf','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu dolor nisl. Integer vehicula purus sem. Donec at sapien a velit efficitur imperdiet. Vestibulum ac turpis in justo viverra tristique et non arcu. Maecenas malesuada sit amet ante ac consequat. Donec dolor ligula, volutpat quis nisl nec, placerat facilisis dui. Duis euismod gravida diam, ut mollis sapien fringilla at. Aenean facilisis lacus et venenatis maximus.\n\nInterdum et malesuada fames ac ante ipsum primis in faucibus. Cras sit amet consequat diam, nec fermentum dolor. Proin nec eleifend diam, at lobortis elit. Pellentesque libero ex, pharetra sit amet viverra quis, fermentum ac elit. Sed non urna sodales nibh sollicitudin interdum. Aliquam sapien sem, vulputate ac purus at, efficitur varius nulla. Nullam eget risus eu lorem bibendum venenatis eget eu felis. In quam nisi, ultricies in tortor a, cursus accumsan massa. Proin sodales nulla a quam ultrices, eget placerat ipsum vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent quis ante imperdiet orci viverra dignissim quis at erat.\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean lobortis magna sit amet eros viverra pulvinar at ut libero. Sed egestas iaculis orci, vitae semper dolor. Suspendisse risus felis, fermentum in auctor nec, convallis eu nunc. In lacinia, tortor vel tincidunt vulputate, erat diam imperdiet orci, quis ultricies massa elit non tortor. Maecenas eu ex luctus, mollis quam imperdiet, eleifend ipsum. Ut leo neque, fermentum ut ornare eu, maximus nec lectus. Morbi elit eros, euismod nec dolor at, malesuada elementum leo. Donec molestie justo bibendum massa efficitur, vitae bibendum nisi gravida. Duis in sollicitudin risus. Pellentesque vestibulum, velit nec posuere fermentum, dui magna sagittis ipsum, a pharetra ante purus nec augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed convallis volutpat imperdiet.\n\nNunc euismod facilisis dui. Sed a ipsum lobortis, tristique velit vitae, auctor ligula. Vestibulum tempor hendrerit vehicula. Duis vel interdum elit, et dictum eros. Etiam quam sapien, imperdiet id maximus sed, viverra at nisi. Vivamus semper, orci eu iaculis mollis, magna erat hendrerit nibh, in sodales dolor nibh eget elit. Mauris vel orci et mi dictum fringilla. Morbi scelerisque lacinia lorem, at pharetra turpis commodo dapibus. Pellentesque sit amet massa eget massa sollicitudin sagittis at in nulla. Suspendisse finibus arcu ex, molestie interdum dolor scelerisque ut. Nunc bibendum lacinia ligula, at tincidunt nulla cursus at.\n\nVivamus mattis ac sem id accumsan. Nunc nisl nisi, condimentum et ligula sit amet, rutrum facilisis ante. Aliquam a lectus molestie, sollicitudin ipsum sit amet, tincidunt eros. Mauris sit amet pulvinar est, ut rutrum libero. Nunc interdum erat eget purus iaculis elementum. Nulla sit amet imperdiet nibh. Nullam ac magna et diam tempus lacinia varius non lectus. Vivamus commodo ex in velit elementum sollicitudin. Quisque scelerisque convallis nulla, ut tincidunt purus blandit sit amet.','2023-04-20 17:34:30','2023-04-20 17:34:30'),('e47b7be5-4751-4030-b654-2ecadf695bb1','fc8b5c62-78f6-49ce-95a3-af70f5e60364','test','Test','test','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus sagittis neque eu eleifend. Sed vitae posuere lorem. Proin dui eros, scelerisque sit amet molestie ultricies, imperdiet quis lorem. Nulla mollis nunc et tincidunt varius. Nulla malesuada nisl est, ut consectetur nisi pulvinar et. Morbi aliquet eget lorem id venenatis. Maecenas consequat, turpis eu fringilla sodales, ante erat pretium leo, at eleifend nunc erat vel lacus. Curabitur iaculis eros lacus, eu varius est commodo vel. Cras sagittis, eros sed scelerisque gravida, massa ex ultrices ligula, id sagittis augue est eu quam. Sed lacus justo, suscipit quis accumsan sed, hendrerit a tellus. Nulla facilisi. Mauris sodales ex consequat, luctus magna id, ultricies nisi.\n\nPhasellus ut lacus rutrum, consectetur metus sed, rhoncus ligula. Maecenas augue quam, imperdiet eget urna et, egestas cursus dolor. Nulla ac tellus vulputate, malesuada erat at, porttitor arcu. Mauris rutrum mauris ut pharetra sodales. Nullam et placerat erat. Duis feugiat nisl tortor, in molestie lacus euismod eget. Vivamus vel elit viverra, condimentum ex vel, imperdiet lacus. Fusce non enim convallis, venenatis nisl vel, ultrices ipsum. Pellentesque velit orci, accumsan ut turpis in, iaculis luctus enim.\n\nDonec at neque sed tellus lobortis lobortis. Donec erat nulla, pharetra at lacus at, accumsan convallis lectus. Curabitur fermentum sagittis ipsum, malesuada facilisis enim accumsan et. Vestibulum sed ornare dui, a viverra augue. Curabitur nec lobortis orci. Aliquam id elementum arcu. Etiam luctus turpis enim, a egestas massa aliquet eu. Suspendisse posuere volutpat sagittis. Cras id dapibus justo. Aenean a risus urna. Pellentesque lobortis vitae dolor aliquet fermentum.\n\nUt ultricies nisi leo, ut efficitur elit tincidunt eu. Integer malesuada nec risus nec dignissim. Nulla a neque et sem aliquam venenatis. Morbi tincidunt ultricies mattis. Suspendisse felis tortor, consequat sit amet diam eu, iaculis maximus est. Maecenas porttitor, augue accumsan lacinia congue, lorem orci varius metus, vitae consectetur orci justo ut lorem. Etiam magna metus, condimentum id dolor sit amet, euismod tincidunt elit. Cras vehicula maximus est, sed sodales velit rhoncus non. Suspendisse posuere faucibus nibh, et egestas nisi dignissim a. Ut condimentum vehicula enim, in luctus mauris bibendum a. Mauris vestibulum at massa quis viverra. Nunc vulputate, purus at varius scelerisque, lorem lacus pulvinar augue, sed feugiat tellus ex sit amet tellus.\n\nDonec fermentum ligula id sodales consectetur. Pellentesque id consequat lectus. In ut orci sed ante lobortis bibendum. Mauris efficitur leo non diam gravida consectetur. Aliquam fermentum fringilla rutrum. Aliquam ultrices sem quis elit accumsan, id dictum velit varius. Sed sodales tellus ut nisl bibendum placerat. Phasellus congue mauris enim, sed varius nisl scelerisque nec. Sed eget lectus non ante lobortis volutpat. Vestibulum blandit id mi ac accumsan.','2023-03-27 09:21:14','2023-03-27 09:21:14');
+/*!40000 ALTER TABLE `articles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comments` (
+  `id` varchar(255) NOT NULL,
+  `body` text,
+  `article_id` varchar(255) DEFAULT NULL,
+  `user_id` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `flyway_schema_history`
+--
+
+DROP TABLE IF EXISTS `flyway_schema_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `flyway_schema_history` (
+  `installed_rank` int NOT NULL,
+  `version` varchar(50) DEFAULT NULL,
+  `description` varchar(200) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `script` varchar(1000) NOT NULL,
+  `checksum` int DEFAULT NULL,
+  `installed_by` varchar(100) NOT NULL,
+  `installed_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `execution_time` int NOT NULL,
+  `success` tinyint(1) NOT NULL,
+  PRIMARY KEY (`installed_rank`),
+  KEY `flyway_schema_history_s_idx` (`success`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `flyway_schema_history`
+--
+
+LOCK TABLES `flyway_schema_history` WRITE;
+/*!40000 ALTER TABLE `flyway_schema_history` DISABLE KEYS */;
+INSERT INTO `flyway_schema_history` VALUES (1,'1','create tables','SQL','V1__create_tables.sql',-420955279,'user','2023-03-27 09:17:37',374,1);
+/*!40000 ALTER TABLE `flyway_schema_history` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `follows`
+--
+
+DROP TABLE IF EXISTS `follows`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `follows` (
+  `user_id` varchar(255) NOT NULL,
+  `follow_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `follows`
+--
+
+LOCK TABLES `follows` WRITE;
+/*!40000 ALTER TABLE `follows` DISABLE KEYS */;
+/*!40000 ALTER TABLE `follows` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tags`
+--
+
+DROP TABLE IF EXISTS `tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tags` (
+  `id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tags`
+--
+
+LOCK TABLES `tags` WRITE;
+/*!40000 ALTER TABLE `tags` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tags` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` varchar(255) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `bio` text,
+  `image` varchar(511) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('fc8b5c62-78f6-49ce-95a3-af70f5e60364','lukas','$2a$10$wfqCL1yfaI6h6mLZTr4HJ.myjgi8jA.WdkPRTifo5uxetq1jVbIjG','lukas@ex.test','','https://static.productionready.io/images/smiley-cyrus.jpg');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-04-20 17:35:21

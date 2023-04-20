@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels" id="patternrefinementmodels-WebApp-PublicCloud_CustomerScaling-AWS-w3-wip1">
+    <PatternRefinementModel isPdrm="yes" name="WebApp-PublicCloud_CustomerScaling-AWS-w3-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
+        <Detector>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="NGINX-Application_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:NGINX-Application_w1" id="d_NGINX-Application_w1_0" winery:x="409" winery:y="126">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <context_root/>
+                        <AppName/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
+                <Policies>
+                    <Policy xmlns:componentHostingPatterns="https://patternpedia.org/patternLanguages/componentHostingPatterns" name="scaling" policyType="componentHostingPatterns:Consumer-Managed-Scaling-Configuration"/>
+                </Policies>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Platform-as-a-Service-PaaS" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Platform-as-a-Service-PaaS" id="d_Platform-as-a-Service-PaaS_0" winery:x="480" winery:y="289">
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Public-Cloud" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Public-Cloud" id="d_Public-Cloud_0" winery:x="494" winery:y="489">
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
+                <Properties/>
+                <SourceElement ref="d_Platform-as-a-Service-PaaS_0"/>
+                <TargetElement ref="d_Public-Cloud_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
+                <SourceElement ref="d_NGINX-Application_w1_0"/>
+                <TargetElement ref="d_Platform-as-a-Service-PaaS_0"/>
+            </RelationshipTemplate>
+        </Detector>
+        <RelationMappings>
+            <RelationMapping xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" relationType="ToscaBaseTypes:HostedOn" direction="ingoing" detectorNode="d_Platform-as-a-Service-PaaS_0" refinementNode="rs_ElasticBeanstalk_w1-wip1_0" id="relMap1"/>
+        </RelationMappings>
+        <PermutationMappings/>
+        <RefinementStructure>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="ElasticBeanstalk-Umgebung_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:ElasticBeanstalk-Umgebung_w1-wip1" id="rs_ElasticBeanstalk-Umgebung_w1-wip1_0" winery:x="436" winery:y="288">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
+                        <Typ>mit Lastausgleich</Typ>
+                        <ScalingMetric>NetworkOut &gt; 6MB</ScalingMetric>
+                        <Duration>5Min</Duration>
+                    </ex:Properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="ElasticBeanstalk_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:ElasticBeanstalk_w1-wip1" id="rs_ElasticBeanstalk_w1-wip1_0" winery:x="456" winery:y="532">
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="NGINX-Application_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:NGINX-Application_w1" id="rs_NGINX-Application_w1_0" winery:x="456" winery:y="117">
+                <Properties>
+                    <otntypdInodetypes:properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery" xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <context_root/>
+                        <AppName/>
+                    </otntypdInodetypes:properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Public-Cloud" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Public-Cloud" id="rs_Public-Cloud_0" winery:x="533" winery:y="698">
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
+                <SourceElement ref="rs_ElasticBeanstalk-Umgebung_w1-wip1_0"/>
+                <TargetElement ref="rs_ElasticBeanstalk_w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
+                <SourceElement ref="rs_NGINX-Application_w1_0"/>
+                <TargetElement ref="rs_ElasticBeanstalk-Umgebung_w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
+                <SourceElement ref="rs_ElasticBeanstalk_w1-wip1_0"/>
+                <TargetElement ref="rs_Public-Cloud_0"/>
+            </RelationshipTemplate>
+        </RefinementStructure>
+        <AttributeMappings/>
+        <StayMappings>
+            <StayMapping detectorNode="d_NGINX-Application_w1_0" refinementNode="rs_NGINX-Application_w1_0" id="stayMap0"/>
+            <StayMapping detectorNode="d_Public-Cloud_0" refinementNode="rs_Public-Cloud_0" id="stayMap1"/>
+        </StayMappings>
+        <DeploymentArtifactMappings/>
+        <PermutationOptions/>
+        <BehaviorPatternMappings>
+            <BehaviorPatternMapping behaviorPattern="scaling" detectorNode="d_NGINX-Application_w1_0" refinementNode="rs_ElasticBeanstalk-Umgebung_w1-wip1_0" id="behaviorPatternMap0">
+                <Property key="Typ" value="mit Lastausgleich"/>
+            </BehaviorPatternMapping>
+            <BehaviorPatternMapping behaviorPattern="scaling" detectorNode="d_NGINX-Application_w1_0" refinementNode="rs_ElasticBeanstalk-Umgebung_w1-wip1_0" id="behaviorPatternMap1">
+                <Property key="ScalingMetric" value="NetworkOut &gt; 6MB"/>
+            </BehaviorPatternMapping>
+            <BehaviorPatternMapping behaviorPattern="scaling" detectorNode="d_NGINX-Application_w1_0" refinementNode="rs_ElasticBeanstalk-Umgebung_w1-wip1_0" id="behaviorPatternMap2">
+                <Property key="Duration" value="5Min"/>
+            </BehaviorPatternMapping>
+        </BehaviorPatternMappings>
+    </PatternRefinementModel>
+</Definitions>
