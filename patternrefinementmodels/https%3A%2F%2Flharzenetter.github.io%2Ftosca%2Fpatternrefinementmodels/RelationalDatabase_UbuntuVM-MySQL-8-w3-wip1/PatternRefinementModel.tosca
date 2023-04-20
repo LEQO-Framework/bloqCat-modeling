@@ -12,9 +12,6 @@
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral1:Compute" id="d_Compute_0" winery:x="498" winery:y="412">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
@@ -43,7 +40,7 @@
                     <otntyIgeneral:MySQLDBMSProperties xmlns="http://opentosca.org/nodetypes">
                         <DBMSUser>root</DBMSUser>
                         <DBMSPassword>root</DBMSPassword>
-                        <DBMSPort>3306</DBMSPort>
+                        <DBMSPort>get_input: mysql_port</DBMSPort>
                         <root_password/>
                         <port/>
                     </otntyIgeneral:MySQLDBMSProperties>
@@ -52,9 +49,6 @@
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral1:Compute" id="rs_Compute_0" winery:x="480" winery:y="464">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
@@ -63,9 +57,6 @@
                 <TargetElement ref="rs_MySQL-DBMS_8.0-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_MySQL-DBMS_8.0-w1_0"/>
                 <TargetElement ref="rs_Compute_0"/>
             </RelationshipTemplate>

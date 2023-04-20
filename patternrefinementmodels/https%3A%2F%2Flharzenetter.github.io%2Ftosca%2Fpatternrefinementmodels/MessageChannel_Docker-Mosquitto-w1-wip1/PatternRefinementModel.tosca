@@ -13,16 +13,10 @@
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Message-oriented-Middleware" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Message-oriented-Middleware" id="d_Message-oriented-Middleware_0" winery:x="585" winery:y="366">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Hypervisor" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Hypervisor" id="d_Hypervisor_0" winery:x="576" winery:y="549">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
@@ -32,9 +26,6 @@
                 <TargetElement ref="d_Hypervisor_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="d_MQTT-Topic_0"/>
                 <TargetElement ref="d_Message-oriented-Middleware_0"/>
             </RelationshipTemplate>
@@ -94,16 +85,10 @@
                 <TargetElement ref="rs_Mosquitto_2.0-w2-wip1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_Mosquitto_2.0-w2-wip1_0"/>
                 <TargetElement ref="rs_UbuntuContainer_22.04-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_UbuntuContainer_22.04-w1_0"/>
                 <TargetElement ref="rs_DockerEngine_w1_0"/>
             </RelationshipTemplate>

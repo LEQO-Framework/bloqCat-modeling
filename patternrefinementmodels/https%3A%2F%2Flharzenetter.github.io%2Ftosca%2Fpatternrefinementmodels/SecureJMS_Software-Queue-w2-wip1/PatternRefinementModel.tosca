@@ -22,9 +22,6 @@
         <RefinementStructure>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="SoftwareComponent" minInstances="1" maxInstances="1" type="ntyIgeneral1:SoftwareComponent" id="rs_WebApplication_0" winery:x="453" winery:y="157"/>
             <NodeTemplate xmlns:eip="https://patternpedia.org/patternLanguages/eip" name="Message-Channel" minInstances="1" maxInstances="1" type="eip:Message-Channel" id="rs_Message-Channel_0" winery:x="927" winery:y="151">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Secure-JMS" type="relationsLukas:Secure-JMS" id="rs_con_Secure-JMS_0">

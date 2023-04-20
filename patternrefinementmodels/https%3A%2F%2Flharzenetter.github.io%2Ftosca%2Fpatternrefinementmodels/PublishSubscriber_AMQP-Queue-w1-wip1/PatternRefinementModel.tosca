@@ -17,9 +17,6 @@
                 <TargetElement ref="d_Message-Channel_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Messaging" type="relationsLukas:Messaging" id="d_con_Messaging_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="d_SubscriberProxy_0"/>
                 <TargetElement ref="d_Message-Channel_0"/>
             </RelationshipTemplate>
@@ -63,9 +60,6 @@
                 <TargetElement ref="rs_Queue_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="AMQP" type="relationsLukas:AMQP" id="rs_con_AMQP_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_SubscriberProxy_0"/>
                 <TargetElement ref="rs_Queue_0"/>
             </RelationshipTemplate>

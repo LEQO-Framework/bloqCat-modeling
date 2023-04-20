@@ -3,16 +3,10 @@
     <PatternRefinementModel isPdrm="yes" name="SQS-Queue_w2-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
         <Detector>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Message-oriented-Middleware" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Message-oriented-Middleware" id="d_Message-oriented-Middleware_0" winery:x="449" winery:y="294">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org" xmlns:CloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3"/>
-                </Properties>
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:eip="https://patternpedia.org/patternLanguages/eip" name="Message-Channel" minInstances="1" maxInstances="1" type="eip:Message-Channel" id="d_Message-Channel_0" winery:x="453" winery:y="84">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org" xmlns:EnterpriseIntegrationPatterns="https://patternpedia.org/patternLanguages/eip" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3"/>
-                </Properties>
                 <Capabilities/>
                 <Policies>
                     <Policy xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="ExactlyOnce" policyType="cloudComputingPatterns:Exactly-once-Delivery"/>
@@ -28,16 +22,10 @@
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3"/>
-                </Properties>
                 <SourceElement ref="d_Message-Channel_0"/>
                 <TargetElement ref="d_Message-oriented-Middleware_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3"/>
-                </Properties>
                 <SourceElement ref="d_Message-oriented-Middleware_0"/>
                 <TargetElement ref="d_AWS_w1-wip1_0"/>
             </RelationshipTemplate>

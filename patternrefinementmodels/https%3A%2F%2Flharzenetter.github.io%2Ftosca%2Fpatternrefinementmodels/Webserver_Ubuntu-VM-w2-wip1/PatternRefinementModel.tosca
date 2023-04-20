@@ -34,9 +34,6 @@
                 <TargetElement ref="d_Execution-Environment_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="d_Execution-Environment_0"/>
                 <TargetElement ref="d_OpenStack_22-Victoria-w1_0"/>
             </RelationshipTemplate>

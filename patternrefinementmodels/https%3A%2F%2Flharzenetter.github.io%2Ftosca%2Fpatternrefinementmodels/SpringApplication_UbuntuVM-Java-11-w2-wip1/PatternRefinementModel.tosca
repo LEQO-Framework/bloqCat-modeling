@@ -15,9 +15,6 @@
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Execution-Environment" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Execution-Environment" id="d_Execution-Environment_0" winery:x="686" winery:y="307">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
@@ -37,9 +34,6 @@
                 <TargetElement ref="d_Execution-Environment_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="d_Execution-Environment_0"/>
                 <TargetElement ref="d_OpenStack_22-Victoria-w1_0"/>
             </RelationshipTemplate>
@@ -100,30 +94,18 @@
                 <Policies/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="DependsOn" type="ToscaBaseTypes:DependsOn" id="rs_con_DependsOn_0">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_SpringWebApp_w1_0"/>
                 <TargetElement ref="rs_Java_11-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_Ubuntu-VM_20.04-w1_0"/>
                 <TargetElement ref="rs_OpenStack_22-Victoria-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_SpringWebApp_w1_0"/>
                 <TargetElement ref="rs_Ubuntu-VM_20.04-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_Java_11-w1_0"/>
                 <TargetElement ref="rs_Ubuntu-VM_20.04-w1_0"/>
             </RelationshipTemplate>

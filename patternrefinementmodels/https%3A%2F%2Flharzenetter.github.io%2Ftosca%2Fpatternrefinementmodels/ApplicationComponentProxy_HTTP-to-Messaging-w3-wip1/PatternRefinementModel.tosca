@@ -3,16 +3,10 @@
     <PatternRefinementModel isPdrm="no" name="ApplicationComponentProxy_HTTP-to-Messaging-w3-wip1" targetNamespace="https://lharzenetter.github.io/tosca/patternrefinementmodels">
         <Detector>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Application-Component-Proxy" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Application-Component-Proxy" id="d_Application-Component-Proxy_0" winery:x="478" winery:y="145">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="ContainerApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:ContainerApplication" id="d_ContainerApplication_0" winery:x="416" winery:y="358">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
@@ -34,16 +28,10 @@
                 </Properties>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="rs_Python_3-w1_0" winery:x="721" winery:y="345">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="ContainerApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:ContainerApplication" id="rs_ContainerApplication_0" winery:x="541" winery:y="548">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="DependsOn" type="ToscaBaseTypes:DependsOn" id="rs_con_DependsOn_0">
@@ -52,16 +40,10 @@
                 <TargetElement ref="rs_Python_3-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_Python_3-w1_0"/>
                 <TargetElement ref="rs_ContainerApplication_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_PublisherProxy_0"/>
                 <TargetElement ref="rs_ContainerApplication_0"/>
             </RelationshipTemplate>

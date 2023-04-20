@@ -19,9 +19,6 @@
                 </Policies>
             </NodeTemplate>
             <NodeTemplate xmlns:componentHostingPatterns="https://patternpedia.org/patternLanguages/componentHostingPatterns" name="Serverless-Hosting" minInstances="1" maxInstances="1" type="componentHostingPatterns:Serverless-Hosting" id="d_Serverless-Hosting_0" winery:x="604" winery:y="342">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
                 <Policies/>
             </NodeTemplate>
@@ -39,9 +36,6 @@
                 <TargetElement ref="d_Serverless-Hosting_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="d_Serverless-Hosting_0"/>
                 <TargetElement ref="d_AWS_w1-wip1_0"/>
             </RelationshipTemplate>
@@ -92,16 +86,10 @@
                 <TargetElement ref="rs_Lambda-Envirionment_Java-11-w1-wip1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_Lambda-Envirionment_Java-11-w1-wip1_0"/>
                 <TargetElement ref="rs_Lambda_w1-wip1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_Lambda_w1-wip1_0"/>
                 <TargetElement ref="rs_AWS_w1-wip1_0"/>
             </RelationshipTemplate>

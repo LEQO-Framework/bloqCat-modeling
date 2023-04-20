@@ -12,9 +12,6 @@
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="ContainerApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:ContainerApplication" id="d_ContainerApplication_0" winery:x="434" winery:y="305">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
@@ -52,9 +49,6 @@
                 <Policies/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="ContainerApplication" minInstances="1" maxInstances="1" type="ntyIgeneral1:ContainerApplication" id="rs_ContainerApplication_0" winery:x="462" winery:y="528">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
@@ -63,9 +57,6 @@
                 <TargetElement ref="rs_MySQL-DBMS_8.0-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_MySQL-DBMS_8.0-w1_0"/>
                 <TargetElement ref="rs_ContainerApplication_0"/>
             </RelationshipTemplate>

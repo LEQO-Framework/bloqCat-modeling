@@ -16,15 +16,9 @@
                 </Policies>
             </NodeTemplate>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Platform-as-a-Service-PaaS" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Platform-as-a-Service-PaaS" id="d_Platform-as-a-Service-PaaS_0" winery:x="480" winery:y="289">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <NodeTemplate xmlns:cloudComputingPatterns="https://patternpedia.org/patternLanguages/cloudComputingPatterns" name="Public-Cloud" minInstances="1" maxInstances="1" type="cloudComputingPatterns:Public-Cloud" id="d_Public-Cloud_0" winery:x="494" winery:y="489">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_0">
@@ -32,9 +26,6 @@
                 <TargetElement ref="d_Public-Cloud_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="d_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="d_NGINX-Application_w1_0"/>
                 <TargetElement ref="d_Platform-as-a-Service-PaaS_0"/>
             </RelationshipTemplate>
@@ -56,9 +47,6 @@
                 <Capabilities/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="ElasticBeanstalk_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:ElasticBeanstalk_w1-wip1" id="rs_ElasticBeanstalk_w1-wip1_0" winery:x="456" winery:y="532">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <Capabilities/>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" name="AWS_w1-wip1" minInstances="1" maxInstances="1" type="ntyIgeneral:AWS_w1-wip1" id="rs_AWS_w1-wip1_0" winery:x="499" winery:y="744">
@@ -79,23 +67,14 @@
                 <Capabilities/>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_1">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_ElasticBeanstalk-Umgebung_w1-wip1_0"/>
                 <TargetElement ref="rs_ElasticBeanstalk_w1-wip1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_2">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_ElasticBeanstalk_w1-wip1_0"/>
                 <TargetElement ref="rs_AWS_w1-wip1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="rs_con_HostedOn_0">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org"/>
-                </Properties>
                 <SourceElement ref="rs_NGINX-Application_w1_0"/>
                 <TargetElement ref="rs_ElasticBeanstalk-Umgebung_w1-wip1_0"/>
             </RelationshipTemplate>

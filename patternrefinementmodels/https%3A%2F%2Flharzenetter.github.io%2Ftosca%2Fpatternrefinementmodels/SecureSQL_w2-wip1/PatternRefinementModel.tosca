@@ -58,6 +58,11 @@
             <RelationshipTemplate xmlns:relationsLukas="https://lharzenetter.github.io/tosca/relationshiptypes" name="Secure-SQL" type="relationsLukas:Secure-SQL" id="rs_con_Secure-SQL_0">
                 <SourceElement ref="rs_SoftwareComponent_0"/>
                 <TargetElement ref="rs_Database_0"/>
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType>encrypted</ChannelType>
+                    </properties>
+                </Properties>
             </RelationshipTemplate>
         </RefinementStructure>
         <AttributeMappings/>
