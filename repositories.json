@@ -21,8 +21,8 @@
   },
   {
     "name": "Pattern Atlas",
-    "url": "http://192.168.178.53:1977/patternatlas/",
-    "ui": "http://192.168.178.53:1978",
+    "url": "http://192.168.178.100:1977/patternatlas/",
+    "ui": "http://192.168.178.100:1978",
     "patternAtlas": true
   }
 ]

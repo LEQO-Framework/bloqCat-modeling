@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/servicetemplates" id="appsLukas-RealWorld-Application_appProxy-pattern-based-w1-wip1">
-    <ServiceTemplate name="RealWorld-Application_appProxy-pattern-based-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/servicetemplates" id="RealWorld-Application_appProxy-pattern-based-w1-wip1">
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/servicetemplates" id="appsLukas-RealWorld-extended_appProxy-pattern-based-w1-wip1">
+    <ServiceTemplate name="RealWorld-extended_appProxy-pattern-based-w1-wip1" targetNamespace="https://lharzenetter.github.io/tosca/servicetemplates" id="RealWorld-extended_appProxy-pattern-based-w1-wip1">
         <TopologyTemplate>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/example/applications/nodetypes" name="RealWorld-Application" minInstances="1" maxInstances="1" type="otntyIgeneral:RealWorld-Application_Angular-w1" id="RealWorld-Application_Angular-w1_0" winery:x="103" winery:y="86">
                 <Properties>
