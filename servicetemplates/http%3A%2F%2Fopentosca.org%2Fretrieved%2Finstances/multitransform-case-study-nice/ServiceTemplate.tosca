@@ -7,23 +7,6 @@
             <Tag name="jsonDiscoveryPlugins" value="[{&quot;id&quot;:&quot;terraform&quot;,&quot;discoveredIds&quot;:[]},{&quot;id&quot;:&quot;DockerLogsRefinement&quot;,&quot;discoveredIds&quot;:[&quot;SpringWebApp_w10.7505471997855117&quot;,&quot;DockerContainer_w10.27805547621026505&quot;,&quot;MongoDB-Server_w1-wip10.08391190692479422&quot;,&quot;MongoDB_w1-wip10.027967058491344288&quot;,&quot;DockerContainer_w10.21809407991568552&quot;,&quot;DockerContainer_w10.06859538838405499&quot;,&quot;DockerContainer_w10.5712449413709536&quot;,&quot;MongoDB-Server_w1-wip10.861198387812389&quot;,&quot;SpringWebApp_w10.9027720541417399&quot;,&quot;MongoDB_w1-wip10.515846727485228&quot;]},{&quot;id&quot;:&quot;Java&quot;,&quot;discoveredIds&quot;:[&quot;Java_8-w10.6914365808958881&quot;,&quot;Java_8-w10.8930686768734835&quot;]},{&quot;id&quot;:&quot;SpringWebApplication&quot;,&quot;discoveredIds&quot;:[&quot;SpringWebApp_w10.7505471997855117&quot;,&quot;SpringWebApp_w10.9027720541417399&quot;]},{&quot;id&quot;:&quot;MySQL-DBMS&quot;,&quot;discoveredIds&quot;:[&quot;puppet-agent-mysqld&quot;]},{&quot;id&quot;:&quot;MySQL-DB&quot;,&quot;discoveredIds&quot;:[&quot;puppet-agent-Mysql_database&quot;]},{&quot;id&quot;:&quot;docker-image&quot;,&quot;discoveredIds&quot;:[&quot;DockerContainer_w10.29158695371631127&quot;,&quot;NodeJS-App_10.00.5344549038344469&quot;,&quot;NodeJS_10.00.5022467777986721&quot;]}]"/>
         </Tags>
         <TopologyTemplate>
-            <NodeTemplate xmlns:ntyIgeneral1="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" name="40ccf208-9164-4161-bdad-e6d2595aa909" minInstances="1" maxInstances="1" type="ntyIgeneral1:Compute" id="40ccf208-9164-4161-bdad-e6d2595aa909" winery:x="560" winery:y="1032">
-                <Properties>
-                    <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
-                        <State>Running</State>
-                    </ex:Properties>
-                </Properties>
-                <Requirements>
-                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="local_storage" type="rtyIgeneral:Attachment" id="local_storageCompute0.6237639384211043"/>
-                </Requirements>
-                <Capabilities>
-                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="host" type="ctyIgeneral:Compute" id="hostCompute0.6237639384211043"/>
-                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="endpoint" type="ctyIgeneral:Admin" id="endpointCompute0.6237639384211043"/>
-                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="os" type="ctyIgeneral:OperatingSystem" id="osCompute0.6237639384211043"/>
-                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="scalable" type="ctyIgeneral:Scalable" id="scalableCompute0.6237639384211043"/>
-                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="binding" type="ctyIgeneral:Bindable" id="bindingCompute0.6237639384211043"/>
-                </Capabilities>
-            </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="KubeDockerEngine" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerEngine_w1" id="DockerEngine_w10.5341908416156731" winery:x="553" winery:y="896">
                 <Properties>
                     <otntyIproperties:DockerEngine_Properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties" xmlns="http://opentosca.org/nodetypes/properties">
@@ -83,7 +66,7 @@
                     <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" type="ctyIgeneral:OperatingSystem" id="ProvideOperatingSystemDockerContainer_w10.06859538838405499"/>
                 </Capabilities>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral1="http://opentosca.org/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="ntyIgeneral1:Alpine-Container_w1" id="DockerContainer_w10.29158695371631127" winery:x="124" winery:y="353">
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="otntyIgeneral:Alpine-Container_w1" id="DockerContainer_w10.29158695371631127" winery:x="124" winery:y="353">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org" xmlns="http://www.example.org">
                         <HostMountFiles>get_input: HostMountFiles_DockerContainer_w10_29158695371631127</HostMountFiles>
@@ -301,10 +284,6 @@
                     </ex:Properties>
                 </Properties>
             </NodeTemplate>
-            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerEngine_w10.5341908416156731-HostedOn-40ccf208-9164-4161-bdad-e6d2595aa909">
-                <SourceElement ref="DockerEngine_w10.5341908416156731"/>
-                <TargetElement ref="40ccf208-9164-4161-bdad-e6d2595aa909"/>
-            </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w10.5712449413709536-HostedOn-DockerEngine_w10.5341908416156731">
                 <SourceElement ref="DockerContainer_w10.5712449413709536"/>
                 <TargetElement ref="DockerEngine_w10.5341908416156731"/>
