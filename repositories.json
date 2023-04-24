@@ -21,8 +21,8 @@
   },
   {
     "name": "Pattern Atlas",
-    "url": "http://192.168.178.100:1977/patternatlas/",
-    "ui": "http://192.168.178.100:1978",
+    "url": "http://host.docker.internal:1977/patternatlas/",
+    "ui": "http://host.docker.internal:1978",
     "patternAtlas": true
   }
 ]
