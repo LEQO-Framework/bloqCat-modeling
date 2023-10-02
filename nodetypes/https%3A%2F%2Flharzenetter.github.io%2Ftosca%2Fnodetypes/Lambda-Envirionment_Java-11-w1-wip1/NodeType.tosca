@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://lharzenetter.github.io/tosca/nodetypes" id="ntyIgeneral-Lambda-Envirionment_Java-11-w1-wip1">
-    <NodeType name="Lambda-Envirionment_Java-11-w1-wip1" abstract="no" final="no" targetNamespace="https://lharzenetter.github.io/tosca/nodetypes" winery:bordercolor="#f58c04">
-        <DerivedFrom xmlns:ntyIgeneral="https://lharzenetter.github.io/tosca/nodetypes" typeRef="ntyIgeneral:Lambda-Envrionment_w1-wip1"/>
-    </NodeType>
-</Definitions>
