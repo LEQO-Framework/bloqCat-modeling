@@ -1,0 +1,17 @@
+TOSCA-Meta-Version: 1.0
+CSAR-Version: 1.0
+Created-By: Winery 3.0.0-SNAPSHOT
+Entry-Definitions: Definitions/ntyIgeneral1__UniformSuperposition_latest-w1-wip1.tosca
+
+Name: Definitions/ntyIgeneral1__UniformSuperposition_latest-w1-wip1.tosca
+Content-Type: application/vnd.oasis.tosca.definitions
+
+Name: winery/Namespaces.json
+Content-Type: application/json
+
+Name: nodetypes/https%3A%2F%2Fbloqcat.github.io%2Ftosca%2Fnodetypes/UniformSuperposition_latest-w1-wip1/appearance/bigIcon.png
+Content-Type: image/png
+
+Name: nodetypes/https%3A%2F%2Fbloqcat.github.io%2Ftosca%2Fnodetypes/UniformSuperposition_latest-w1-wip1/README.md
+Content-Type: text/plain
+
