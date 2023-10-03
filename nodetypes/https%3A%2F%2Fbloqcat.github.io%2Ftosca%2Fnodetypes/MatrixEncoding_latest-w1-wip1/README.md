@@ -1,5 +1,7 @@
 # Matrix Encoding Pattern 
 
+> &copy; This pattern is originally published in Weigold, M., et al.: Encoding patterns for quantum algorithms. IET Quant. Comm. 1–12 (2021). https://doi.org/10.1049/qtc2.12032
+
 ## Haftungsausschluss
 
 Dies ist ein Forschungsprototyp und enthält insbesondere Beiträge von Studenten.

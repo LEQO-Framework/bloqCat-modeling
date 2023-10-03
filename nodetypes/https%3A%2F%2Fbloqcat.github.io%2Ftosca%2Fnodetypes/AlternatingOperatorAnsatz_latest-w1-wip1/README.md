@@ -1,6 +1,6 @@
-# Creating Entanglement Pattern 
+# Alternating Operator Ansatz (AOA) Pattern
 
-> &copy; The original publication of this pattern can be found in [here](https://link.springer.com/chapter/10.1007/978-3-030-14082-3_19)
+> &copy; This pattern is originally published in Weigold, M.; Barzen, J.; Leymann, F.; and Vietz, D: Patterns For Hybrid Quantum Algorithms. In: Proceedings of the 15th Symposium and Summer School on Service-Oriented Computing [SummerSOC 2021](https://doi.org/10.1007/978-3-030-87568-8_2)
 
 ## Haftungsausschluss
 
