@@ -1,4 +1,6 @@
-# Uniform Superposition Pattern 
+# Uniform Superposition Pattern
+
+> &copy; The original publication of this pattern can be found in [here](https://link.springer.com/chapter/10.1007/978-3-030-14082-3_19)
 
 ## Haftungsausschluss
 
