@@ -1,4 +1,4 @@
-# Pattern 
+# Angle Encoding Pattern 
 > &copy; The original publication of this pattern can be found in 
 [here](https://ieeexplore.ieee.org/document/9425837)
 ## Haftungsausschluss
