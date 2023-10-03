@@ -1,4 +1,4 @@
-# <span style="font-variant:small-caps;">Lauffeuer</span> Example Applications [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# <span style="font-variant:small-caps;">BloQCat</span> Example Applications [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 > Example applications modeled in TOSCA to demonstrate the bloQCat framework  [<span style="font-variant:small-caps;">Lauffeuer</span>-Framework](http://github.com/lharzenetter/lauffeuer-framework).
 
