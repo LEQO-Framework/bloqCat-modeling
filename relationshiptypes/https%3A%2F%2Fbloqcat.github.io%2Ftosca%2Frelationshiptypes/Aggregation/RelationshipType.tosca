@@ -12,7 +12,7 @@
     abstract="no" 
     final="no" 
     targetNamespace="https://bloqcat.github.io/tosca/relationshiptypes" 
-    winery:targetArrowHead="PlainArrow" 
+    winery:targetArrowHead="none" 
     winery:sourceArrowHead="none" 
     winery:color="#000000" 
     winery:hoverColor="black" 
