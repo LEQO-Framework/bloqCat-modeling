@@ -1,28 +1,3 @@
 [
-  {
-    "name": "TOSCA Normative Types",
-    "url": "https://github.com/OpenTOSCA/tosca-normative-types",
-    "branch": "main"
-  },
-  {
-    "name": "Common TOSCA Definitions",
-    "url": "https://github.com/OpenTOSCA/tosca-definitions-common",
-    "branch": "patternBasedModeling"
-  },
-  {
-    "name": "Management Features",
-    "url": "https://github.com/OpenTOSCA/tosca-definitions-management-features",
-    "branch": "main"
-  },
-  {
-    "name": "Example Applications",
-    "url": "https://github.com/OpenTOSCA/tosca-definitions-example-applications",
-    "branch": "main"
-  },
-  {
-    "name": "Pattern Atlas",
-    "url": "http://host.docker.internal:1977/patternatlas/",
-    "ui": "http://host.docker.internal:1978",
-    "patternAtlas": true
-  }
+  
 ]
