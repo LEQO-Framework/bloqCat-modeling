@@ -2,6 +2,8 @@
 
 > Example applications modeled in TOSCA to demonstrate the bloQCat framework  [<span style="font-variant:small-caps;">Lauffeuer</span>-Framework](http://github.com/lharzenetter/lauffeuer-framework).
 
+## Setup the Example Applications
+
 ## Usage
 
 This repository uses [git lfs](https://git-lfs.github.com/) as it contains large binary files which are not checked in to the git tree.
