@@ -1,6 +1,6 @@
 # <span style="font-variant:small-caps;">BloQCat</span> Example Applications [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-> Example applications modeled in TOSCA to demonstrate the bloQCat framework  [<span style="font-variant:small-caps;">Pattern</span>Atlas](http://localhost:1978/pattern-languages/af7780d5-1f97-4536-8da7-4194b093ab1d
+> Example applications modeled in TOSCA to demonstrate the bloQCat framework  [<span style="font-variant:small-caps;">LEQO</span>USECASE]https://github.com/LEQO-Framework/LEQO-Use-cases/tree/main/2024-bloqcat-usecase
 ).
 
 ## Setup the Example Applications
@@ -70,32 +70,8 @@ bloqCat-modeling/
 ```
 
 Nodetypes:
-The nodetypes and their description can be found here:
-http://localhost:8080/#/nodetypes
-
-## Haftungsausschluss
-
-Dies ist ein Forschungsprototyp und enthält Beiträge von Studierenden.
-Die Software kann Fehler enthalten oder unter Umständen nicht wie erwartet funktionieren – insbesondere bei neuen oder abgewandelten Anwendungsfällen.
-
-Wichtige Hinweise für den Produktiveinsatz:
-
-Die Funktionsfähigkeit muss überprüft werden.
-
-Die Einhaltung aller relevanten Lizenzen muss sichergestellt sein.
-
-Jegliche Haftung für Schäden – insbesondere entgangenen Gewinn, Betriebsunterbrechungen, Datenverlust oder andere Folgeschäden – ist ausgeschlossen, außer bei grober Fahrlässigkeit, Vorsatz oder Personenschäden.
+Dies ist ein Forschungsprototyp und enthält insbesondere Beiträge von Studenten. Diese Software enthält möglicherweise Fehler und funktioniert möglicherweise, insbesondere bei variierten oder neuen Anwendungsfällen, nicht richtig. Insbesondere beim Produktiveinsatz muss 1. die Funktionsfähigkeit geprüft und 2. die Einhaltung sämtlicher Lizenzen geprüft werden. Die Haftung für entgangenen Gewinn, Produktionsausfall, Betriebsunterbrechung, entgangene Nutzungen, Verlust von Daten und Informationen, Finanzierungsaufwendungen sowie sonstige Vermögens- und Folgeschäden ist, außer in Fällen von grober Fahrlässigkeit, Vorsatz und Personenschäden ausgeschlossen..
 
 ## Disclaimer of Warranty
 
-Unless required by applicable law or agreed in writing, the Licensor provides this software "AS IS", without warranties or conditions of any kind – express or implied.
-
-This includes, but is not limited to:
-
-No warranty of title
-
-No guarantee of non-infringement
-
-No assurance of merchantability or fitness for a particular purpose
-
-You are solely responsible for determining the appropriateness of using this software and assume all risks related to its usage.
+Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
