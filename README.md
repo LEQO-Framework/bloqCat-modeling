@@ -26,48 +26,14 @@ This ensures automatic Git LFS support in all future repositories, so you won’
 ## usage 
 Once you’ve cloned the repository and fetched the necessary binary files, you can begin exploring and running the example applications. These applications serve as reference implementations to understand how the BloqCat framework integrates with TOSCA models.
 
-REPOSITORY STRUCTURE:
-```
-bloqCat-modeling/
-├── admin/
-│   ├── edmmmappings
-│   ├── namespaces
-├── artifacttemplates/
-│   └── State artifact
-│       └── files/
-│               └── MySQL-DB_w1_0.state
-│               └── MySQL-DB_w1_0.state.mimetype
-│       └── ArtifactTemplate.tosca
-│   └── Puppet feature
-│       └── files/
-│               └──rs_MySQL-DB_w1_0.state
-│               └──rs_MySQL-DB_w1_0.state.mimetype
-│       └── ArtifactTemplate.tosca
-├── nodetypes/
-│   └──Blueprint
-│       └──appearance
-│       └──NodeType.tosca
-│   └── NodeTypes
-├── Patternrefinementmodels/
-├── patternrefinementmodels/
-│   └── Information-Obscurity/
-│       └── appearance
-│       └── PolicyType.tosca
-│   └── Information-Obscurity/
-│       └── appearance
-│       └── PolicyType.tosca
-├── relationshiptypes/
-│   └── Aggregation/
-│       └── README.md
-│       └── RelationshipType.tosca
-│   └── ConcreteSolution/
-│       └── README.md
-│       └── RelationshipType.tosca                  
-├── .gitignore
-├── LICENSE
-├── README.md
-└── repositories.json
-```
+Folder Structure:
+Nodetypes:
+Contains all pre-existing patterns
+Relationship Types:
+This folder contains information about pre-existing relationship
+type i.e Aggregation and concrete solution.
+
+
 
 Haftungsausschluss:
 
